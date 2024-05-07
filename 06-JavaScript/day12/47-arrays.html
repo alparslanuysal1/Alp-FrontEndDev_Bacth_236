@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body><h2>Arrays</h2>
+    
+
+
+    <script>
+
+        const kurslar = ["JavaScript", "HTML", "CSS", "Bootstrap"];
+        console.log(kurslar); //['JavaScript', 'HTML', 'CSS', 'Bootstrap']
+        console.log( typeof kurslar); //object 
+        console.log(kurslar[1]); //HTML
+        console.log(kurslar.length); //4
+        console.log(kurslar[kurslar.length-1]); //Bootstrap. dizinin son elemani bu sekilde secilir. uzunluktan bir eksiginci elemani sec. cunku dizi 0'dan baslar 
+        console.log(kurslar[0].length); // birinci elemanin uzunlugu, string uzunlugu yani => 10. JavaScript kelimesinin karakter sayisi
+        
+        kurslar[0] = "Java"; // dizinin birinci elemanini degistirdik
+        kurslar[1] = "React"; // dizinin ikinci elemanini degistirdik
+        kurslar[2] = "Apex"; // dizinin ucuncu elemanini degistirdik
+        kurslar[3] = "NextJs"; // dizinin dorduncu elemanini degistirdik
+        console.log(kurslar); //  ['Java', 'React', 'Apex', 'NextJs']
+
+        kurslar[4] = "Angular";
+        console.log(kurslar);
+
+        kurslar[15] = "15 numarali eleman"; // aradaki 10 elemana null der yine de hata vermez
+        console.log(kurslar); //['Java', 'React', 'Apex', 'NextJs', 'Angular', empty × 10, '15 numarali eleman']
+
+
+        kurslar = ["Phyton", "Ruby"]; // "Assignment to constant variable" hatası verir.
+
+        console.log(kurslar); //const'u let ile degistirirsek burada ["Phyton", "Ruby"] yazar
+        // Object ve Array non-primitive data'dır. const ile tanımladığımızda üzerine doğrudan yeni değer ataması yapılamaz.
+        // Fakat içindeki değerler değiştirilebilir.
+        
+    
+
+    </script>
+</body>
+</html>

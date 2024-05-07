@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Practice</title>
+</head>
+<body>
+    <h2>Array Practice</h2>
+    
+
+    <script>
+
+        let numbers = [12,56,14,67,89,33,22,];
+
+        const calculate=(arr)=>{
+
+            if(!Array.isArray(arr) || arr.length == 0){
+                return; 
+            }
+
+            let smallestNum = arr[0]; // il elemani en kucuk kabul kabul ediyoruz.
+            let largestNum = arr[0]; // il elemani en buyuk kabul kabul ediyoruz.
+            let sum = 0;
+            
+
+            for(let i=0; i<arr.length; i++){
+
+                if(arr[i]< smallestNum){
+                    smallestNum = arr[i];
+                }
+
+                if(arr[i] > largestNum){
+                   largestNum = arr[i];
+                }
+
+                sum += arr[i];
+
+            }
+            return [smallestNum, largestNum, sum]; //array/dizi olarak disari dondur dedik
+        } 
+
+        let values = calculate(numbers); // values bir array'dir
+
+        console.log(values); // [12, 89, 293]
+        console.log(values[0]); // 12
+        console.log(values[1]); // 89
+        console.log(values[2]); // 293
+
+    </script>
+</body>
+</html>

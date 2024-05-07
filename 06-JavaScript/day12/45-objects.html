@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Objects</title>
+</head>
+<body>
+    <h2>JS Objects</h2>
+    
+    <script>
+        const car = { // object tanimliyoruz
+            brand: "Mercedes",
+            model: "S500",
+            color: "Beige",
+            gear: "Otomatic",
+            numberOfGears: 8,
+            engine:{ // object icinde object tanimliyoruz
+                type: "V8",
+                size: 4
+            }, // burada bir ogeden sonra virgul koymaliyiz
+            start: ()=>{ // function expression = degisken icinde function tanimladik.
+                console.log("starting the car");
+
+            }
+        }
+
+        console.log(car);
+        console.log(typeof car); // bu degiskenin type'i objecttir
+        console.log(car.color); //Beige
+        console.log(typeof car.numberOfGears); //number
+        console.log(car.engine.type);
+        console.log(car.start()); //fonksiyonu burada cagirdik ama 23. satirda calisti.
+        // fonksiyonun kendisini de gosteriyor ve undefined diyor.
+        console.log(car.brand); // . koyarak oznitelik secmek bazen hata verir. bu sebeple bir sonrakini kullanmak daha saglikli
+        console.log(car["brand"]);
+
+        console.log(Object.entries(car)); //(entries) Nesnedeki alanlar(property) ve değerleri bir dizi içinde döndürülür..
+        console.log(Object.keys(car)); // (keys) Nesnedeki alanlar(property) bir object içinde döndürülür.. bu sekilde hepsini bir array olarak getirdi.  ['brand', 'model', 'color', 'gear', 'numberOfGears', 'engine', 'start']
+        console.log(Object.values(car)); // (values)  Nesnedeki değerler bir dizi içinde döndürülür..
+
+        //! const da degiskenin/sabitin degerini degistirebiliriz. Sadece ayni isimde yeni bir sabit/degisken atamasi yapilamaz!
+        car.numberOfGears = 7; // ilgili ozniteligin degerini degistirdik.
+        console.log(car["numberOfGears"]); // 7 
+
+        car.oil = "Super"; // yeni oznitelik/property ekledik
+        console.log(car["oil"]); //Super
+    </script>
+</body>
+</html>
