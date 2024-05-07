@@ -1,0 +1,100 @@
+:root {
+    --color1: rgb(42, 85, 85);
+    --color2: rgb(28, 28, 28);
+    --color3: rgba(42, 85, 85, 0.7);
+    --color4: rgb(62, 125, 125);
+    --color5: rgba(28, 28, 28, 0.8);
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    font-family: "Lato", sans-serif;
+    background-image: url("../img/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--color2);
+    overflow: hidden;
+}
+body::after { /* body::after a koyduğumuz içerikte html yi ebeveyn kabul etti yeşil fon tüm sayfayı kapladı.. */
+    content: ""; /* after dedikten sonra bu ifadeyi boyle girmek zorundayiz */
+    background-color: var(--color3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+}
+.btn-primary {
+    background-color: var(--color1);
+    border-color: var(--color1);
+}
+.btn-primary:hover {
+    background-color: var(--color4);
+    border-color: var(--color4);
+}
+.btn-secondary {
+    background-color: var(--color2);
+    border-color: var(--color2);
+}
+.page {
+    position: relative;
+}
+/* position: absolute verdiginiz bir elemanin parentini position:static disinda bir position vermezsek hiyerarsik olarak en yakindaki uste/parente gider ve ona yayilir. */
+.page::after {
+    content: ""; /* after dedikten sonra bu ifadeyi boyle girmek zorundayiz */
+    background-color: var(--color5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+@media (min-width: 992px) {
+    .page {
+        height: 100%;
+        width: 70%;
+        padding-left: 50px;
+        padding-right: 100px;
+    }
+}
+@media (min-width: 1200px) {
+    .page {
+        padding-left: 100px;
+        padding-right: 200px;
+    }
+}
+
+@media (min-width: 992px) {
+    .page::after {
+        transform: skew(-7deg); /* page::after'a siyah fligran vermistik onu egiyoruz */
+       /*  -webkit-transform: skew(-7deg);
+        -moz-transform: skew(-7deg);
+        -ms-transform: skew(-7deg);
+        -o-transform: skew(-7deg); */
+        transform-origin:top right; /* merkez noktasindan egdigi icin merkez noktasini sag uste aliyoruz. boylece diger kenari bosa cikarmiyor   */
+    }
+}
+.page h1 {
+    font-size: 3rem;
+}
+.social-icons a {
+    width: 70px;
+    height: 70px;
+}
+@media (min-width: 992px) {
+    .social-icons{
+        position: absolute;
+        right:50px;
+        top:50%; /* social-icons block unu tepesinden sayfada y ekseninde ortaladik */
+        transform: translateY(-50%); /* social-icons block unu kendi boyunun yarisi kadar y ekseninde yukari cektik. boylece tam ortaya geldi */
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+}
+}

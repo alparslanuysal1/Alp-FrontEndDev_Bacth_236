@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nullish Coalescing</title>
+</head>
+<body>
+    <h2>Nullish Coalescing</h2>
+
+
+    <script>
+        var user = "Ali" ;
+
+        alert (user ?? "Bilinmeyen Kisi"); // null veya undefined 'ise(??)' sunu yazdir: "Bilinmeyen Kisi"
+        //Bir degeri varsa kendisini yazdirir.
+
+        /*  null ve undefined durumlarini kontrol etmek icin kullanilir. Eger user varsa bu degeri yazdirir, eger null veya undefined ise ?? isaretinden sonrasini yazdirir. */
+
+
+        alert(user == null || user == undefined ? "Bilinmeyen Kisi" : user);
+            
+    </script>
+    
+</body>
+</html>

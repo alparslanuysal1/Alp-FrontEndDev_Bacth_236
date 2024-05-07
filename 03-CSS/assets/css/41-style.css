@@ -1,0 +1,43 @@
+ body{
+    margin: 0;
+}
+
+nav.navbar{
+    background-color: violet;
+    padding: 30px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    color: azure;
+    cursor: pointer;
+    width: 100vh;
+    position: fixed;
+    top: 5px;
+    z-index: 1;
+}
+
+table.tableEl{
+    margin:5rem;
+}
+
+table.tableEl thead{
+    background-color: blue;
+    color: yellow;
+    text-align: center;
+    position: sticky;
+    top: 100px;
+    z-index:99;
+}
+
+.container{
+    height: 100vh;
+}
+.basket{
+    background-color: tomato;
+    width: 75px;
+    height: 75px;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+
+}

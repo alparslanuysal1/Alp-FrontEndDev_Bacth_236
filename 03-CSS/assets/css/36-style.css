@@ -1,0 +1,23 @@
+div.box-1{
+    box-sizing: content-box;
+    width: 500px;
+    border: 10px red solid;
+    text-align: center;
+    background-color: aqua;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin: 5rem;
+    padding:30px;
+}
+
+div.box-2{
+    box-sizing: border-box;
+    width: 500px;
+    border: 10px red solid;
+    text-align: center;
+    background-color: aqua;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin: 5rem;
+    padding:30px;
+}

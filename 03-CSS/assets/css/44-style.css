@@ -1,0 +1,80 @@
+.title{
+    color: rgb(70, 70, 243);
+    text-align: center;
+    transition: background-color 1s, color 1s;
+    -webkit-transition: background-color 1s, color 1s;
+    -moz-transition: background-color 1s, color 1s;
+    -ms-transition: background-color 1s, color 1s;
+    -o-transition: background-color 1s, color 1s;
+}
+
+.title:hover{
+    background-color: violet;
+    color: rgb(174, 243, 145);
+    cursor: pointer;
+}
+
+.box{
+    width: 200px;
+    height: 200px;
+    margin: 3rem;
+}
+
+
+.box-1{
+    background-color: red;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: bacgkround-color ease-in 2s, border-radius ease-out 2s;
+    -webkit-transition: bacgkround-color ease-in 2s, border-radius ease-out 2s;
+    -moz-transition: bacgkround-color ease-in 2s, border-radius ease-out 2s;
+    -ms-transition: bacgkround-color ease-in 2s, border-radius ease-out 2s;
+    -o-transition: bacgkround-color ease-in 2s, border-radius ease-out 2s;
+}
+
+.box-1:active{
+    background-color: turquoise;
+    border-radius: 0;
+    cursor: pointer;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+
+.btn{
+    background-color: teal;
+    display: inline-block;
+    padding: 10px;
+    margin: 5rem;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border: 3px solid rgb(127, 248, 108);
+    cursor: pointer;
+    transition: all ease-in-out 1s ;
+
+}
+
+.btn:active{
+    background-color: tomato;
+    border: none;
+    color: violet;
+    transform: scalex(2.5) rotate(-235deg) translateX(-45%);
+
+}
+
+.box-2{
+    background-color: royalblue;
+    transition: all linear 0.5s;
+}
+
+.box-2:hover{
+    background-color: rgb(185, 244, 122);
+    border-radius: 39%;
+    cursor: pointer;
+    transform: translateX(100px) ;
+}

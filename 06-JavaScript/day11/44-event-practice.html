@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Practice</title>
+
+    <style>
+        input,button, div {
+            margin: 7px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Event Practice</h2>
+
+    <input type="number" id="vize" placeholder="vize notunu giriniz"> <br>
+    <input type="number" id="final" placeholder="final notunu giriniz"><br>
+    <button id="btn">Hesapla</button>
+    <div id="result"></div>
+    
+
+
+
+    <script>
+        // 1- input'lardaki degerleri alacagiz.
+        // 2- Ortalamayi hesaplayan bir function olusturacagiz.
+        // 3- harf notunu belirleyen bir function olusturacagiz.
+        // 4- bu fonksiyonlari handler function icinde cagirip gerekli degerleri elde edegiz
+        // 5- en son hepsini sayfaya yazdiracagiz.
+
+        document.querySelector("#btn").addEventListener("click", ()=>{
+            let vize = document.querySelector("#vize").value;
+            let final = document.querySelector("#final").value;
+
+            if(!isNoteValid(vize) || !isNoteValid(final)){ // herhangi birisi true ise iceri gir. cagirdigimiz fonksiyonun sonucunun tersini aliyoruz. cunku isNoteValid fonksiyonunda dogru sayi araligi aralik true geliyordu. yanlis araliktaki sayi girilmisse bunu terse cevir yani true ol ve icerideki hatayi kullaniciya ver. 
+                alert("Lutfen gecerli bir not giriniz!");
+                return;
+            }
+
+            let average = calculateAverage (vize, final);
+            let letterGrade = convertToLetter(average);
+
+            document.querySelector("#result").innerHTML = `Ortalama: ${average}, Harf Notu: ${letterGrade}`;
+
+            //input icini temizlemek icin
+            document.querySelector("#vize").value= ""
+            document.querySelector("#final").value= ""
+        });
+
+        // calculateAverage function
+        const calculateAverage = (a, b) => {
+            return a*0.4 + b*0.6;
+        }
+
+        // converToLetter function
+        const convertToLetter = (avg) => {
+            let letter;
+            switch(true){
+                case (avg >=90):
+                    letter = "A";
+                    break;
+
+                    case (avg >=80):
+                    letter = "B";
+                    break;
+
+                    case (avg >=70):
+                    letter = "C";
+                    break;
+
+                    case (avg >=50):
+                    letter = "D";
+                    break;
+
+                    default:
+                    letter = "F"
+            }
+            return letter;
+        }
+
+        //isNoteValid
+
+        const isNoteValid = (point) => {
+            return point >= 0 && point <= 100 && point; // && point: girilen sayinin null, undefined, "", vs degerleri icin false degeri gelsin.  hicligin boolen degeri false oldugu icin aynen point yazdik. bos olarak fonksiyonu calistirmaya kalkarlarsa uyari alsinlar.
+            // string veri gelirse sayi ile kiyaslamasi false oldugu icin ayri bir kontrol yazmaya gerek kalmadi
+        }
+    </script>
+</body>
+</html>

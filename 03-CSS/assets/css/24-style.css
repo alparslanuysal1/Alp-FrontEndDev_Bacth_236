@@ -1,0 +1,80 @@
+form.form-login{
+    margin: 2rem;
+}
+button{
+    display: inline-block;
+    background-color: blue;
+    color: aliceblue;
+    margin: 2rem;
+    margin-bottom: 2rem;
+}
+/* type ı checkbox inputlar checcked olduğunda */
+form.form-login input[type="checkbox"]:checked{
+    outline: 4px red solid;
+}
+
+form.form-login input[type="text"]:focus{
+    background-color: aqua;
+}
+
+/* yukaridaki kullanim ile alttaki kullanim aynidir */
+.emailFocus:focus{
+    background-color: rgb(131, 187, 236);
+}
+
+a.link{
+    font-size: 1.6rem;
+}
+
+a.link:focus{
+    background-color: aqua;
+    color:blue; 
+}
+
+a.link:visited{
+    color:chartreuse;
+}
+
+a.link:link{
+    color: violet;
+}
+
+ul.liste li:first-child{
+    color: rgb(72, 211, 242);
+    font-size: 1.5rem;
+    background-color: blueviolet;
+}
+
+ul.liste li:last-child{
+    background-color: orange;
+    font-size: 1.5rem;
+    color: aliceblue;
+}
+
+ul.liste li:nth-child(3){
+    background-color: orangered;
+    font-size: 1.5rem;
+    color: rgb(229, 220, 140);
+}
+
+table.tablo{
+    border-collapse: collapse;
+    margin: 5rem;
+    border: 2px black solid;
+}
+
+table.tablo tr td{
+    border: 2px black solid;
+}
+
+table.tablo tr th{
+    border: 3px blue solid;
+}
+
+table.tablo tbody tr:nth-child(odd){
+    background-color: rgb(106, 231, 143);
+}
+
+table.tablo tbody tr:nth-child(even){
+    background-color: rgb(115, 188, 236);
+}

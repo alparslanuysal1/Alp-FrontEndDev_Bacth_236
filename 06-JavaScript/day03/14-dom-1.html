@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model-1</title>
+    <style>
+        .red{
+            color:red;
+            background-color: blue;
+        }
+
+        .about{
+            color: violet;
+            text-align: center;
+            background-color: rgb(77, 255, 71);
+            font-size: 1.3rem;
+        }
+    </style>
+
+</head>
+<body>
+
+
+    <h1 class="title" style="color: red; text-align: center;">Welcome to DOM</h1>
+    <h2 class="title-2" style="color: blue; text-align: center;">Welcome to DOM-2</h2>
+
+    <ul class="list">
+        <li>Lorem.</li>
+        <li>Architecto!</li>
+        <li><strong>Animi</strong></li>
+    </ul>
+
+    <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis nihil quo tempore?</div>
+
+    <p class="about">Lorem, ipsum dolor.</p>
+
+    <script>
+
+let titleEl= document.querySelector(".title");
+let titleEl2= document.querySelector(".title-2");
+
+titleEl=titleEl.style="color:green";
+
+console.log(titleEl);
+
+titleEl2=titleEl2.innerHTML="Elma";
+
+let listEl=document.querySelector(".list li:last-child");
+let listEl2=document.querySelector(".list li:first-child");
+console.log(listEl.innerText);
+console.log(listEl.innerHTML);
+console.log(listEl2.innerText);
+
+
+listEl.innerHTML=`<u> innerHTML kullanildi</u>` // <u> ekleyerek alti cizili yaptik!
+listEl2.innerText= "<em>innerText kullanildi</em>" // her seyi bir metin olarak yazdirdi.
+/*
+   listE1.innerText  ile  text koyup içerisinde var olan textleri okuyabiliriz..
+   listE1.innerHTML  ile yeni bir element koyup içerisinde var olan elementleri okuyabiliriz..
+   */
+  let divEl=document.querySelector("div");
+  console.log(divEl);
+
+  divEl.classList.add("red");
+
+  let pEl=document.querySelector(".about"); //once class'i secip javaScriptte bir degisken olarak tanimladik
+  pEl.classList.remove("about"); // remove ile kaldırdik
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

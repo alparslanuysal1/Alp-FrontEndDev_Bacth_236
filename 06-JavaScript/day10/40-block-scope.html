@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Scope</title>
+</head>
+<body>
+    <h2>Block Scope</h2>
+    
+
+
+    <script>
+
+
+        // var, let, const bloce scopenin dışına çıkamaz..
+        // ama var if'in ve tüm loopların dışına çıkabilir..
+        // x,y,z function scopedir..
+        // b,c block scopedir..
+        // var, if bloğunu aşar ama fonksiyon süsülü parantezlerini aşamaz.
+
+        function myFunction(){
+
+            var x = "Merhaba";
+            let y = "Dunya";
+            const z = "Hello";
+
+            if(true){
+                var a = "Istanbul"; // var function scope oldugu icin block disina cikar
+                let b = "Ankara"; // let ve const block scope'tur, sadece block icinden cagirilabilir.
+                const c ="Izmir";
+
+                console.log(a, b, c); // Istanbul Ankara Izmir
+                
+            }
+
+            console.log(x, y, z); // Merhaba Dunya Hello
+
+            console.log(a);
+            console.log(b, c); // b ve c için "not defined" hatası verir.
+        } // fonksiyon icinde tanimlanan degiskenler disariya hicbir sekilde cikamaz
+
+       // myFunction(); //fonksiyonu bu sekilde calistirmak zorundayiz. yoksa hicbirsey calismaz.
+
+        console.log(k);
+        var k = 20; // var sonradan tanimlansa bile onceki cagirmalarda erisilir fakat tanimlanmamis olarak gorunur. let ve const ta cagiramayiz bile. hata verir
+        console.log(k);
+
+
+    </script>
+</body>
+</html>

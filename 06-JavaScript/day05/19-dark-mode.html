@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark-light-mode</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        #btn{
+            background-color: black;
+            color: whitesmoke;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            border-radius: 50%;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            border: none;
+            cursor:pointer;
+        }
+
+        .dark{
+            background-color: rgb(40, 40, 40);
+            color:rgb(255, 244, 229);
+        }
+
+        .dark #btn{
+            color: rgb(40, 40, 40);
+            background-color:rgb(255, 244, 229);
+        }
+    </style>
+
+</head>
+<body>
+    <h2>Dark Light Mode</h2>
+    
+    <button id="btn" onclick="changeMod()">  
+        <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam magnam ipsam architecto eligendi modi tenetur, repellat ea odio natus officiis reprehenderit hic exercitationem nostrum sunt non incidunt atque harum enim.</span><span>Vitae cupiditate porro incidunt? Aspernatur consectetur hic provident dolor architecto, facilis libero rerum a impedit aperiam, quos perferendis unde in, quia ipsam tempora est. Ducimus vel nobis consequuntur fugiat et.</span><span>Voluptatum eos nisi deserunt libero fugit rerum alias sint, quas quod ipsam? Magni debitis laudantium voluptatibus? Autem vitae delectus voluptatibus qui nihil error voluptates impedit commodi. Ipsam rem modi nobis!</span><span>Aperiam nihil eius minus atque labore magnam assumenda quis provident modi molestias, tenetur voluptatum eaque consequatur suscipit esse perferendis magni, ipsa consectetur saepe illo culpa eligendi consequuntur recusandae! Architecto, saepe!</span><span>Officia nostrum culpa nihil! Placeat enim tempora sed quaerat nisi? Doloremque commodi odio vero alias ex, quae odit, saepe porro tempore rem debitis ducimus itaque dolor repellat repellendus! <br>
+    
+
+
+        <script>
+            var mode = true;
+            function changeMod(){
+                if(mode){
+                    document.querySelector("body").classList.add("dark");
+                    document.querySelector("#btn").innerHTML = `<i class='fa-solid fa-sun'></i>`;
+
+                    mode=false;
+                }
+                else{
+                    document.querySelector("body").classList.remove("dark");
+                    document.querySelector("#btn").innerHTML=`<i class='fa-solid fa-moon'></i>`;
+                    mode = true;
+                }
+                
+            }
+
+
+
+            /* 
+
+Farklı bir yolla Contains ile yaptık (body tagı dark classını içeriyorsa functionu çalıştır demek-> contains)
+     İlk başka çalışması için mode nin değilini aldık..
+     Çünkü body biz tıklayana kadar dark classı içermediği için ilk başta mode false gelir ve fonksiyona giremez..
+     Değili aldık ve fonsiyona girdi..
+    )
+
+     function changeMod(){
+        let mode = document.querySelector("body").classList.contains("dark");
+        if(mode!){
+            document.querySelector("body").classList.add("dark");
+            document.querySelector("#btn").innerHTML = '<i class="fa-regular fa-sun"></i>'
+        }
+        else {
+            document.querySelector("body").classList.remove("dark"); //remove metodu moddan çıkarmaya yarar..
+            document.querySelector("#btn").innerHTML = '<i class="fa-regular fa-moon"></i>'
+        }
+     } */
+        </script>
+</body>
+</html>

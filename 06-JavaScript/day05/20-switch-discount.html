@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case Discount</title>
+</head>
+<body>
+
+    <h2>Switch Discount Uygulamasi</h2>
+
+    <input type="number" name="" id="price">
+    <button onclick="calculate()">Hesapla</button>
+    <div class="result"></div>
+
+
+    <script>
+        console.log("3" + 5); // console.log(3 + Number("5")); degerleri number a cevirip toplayabiliriz.
+        function calculate(){
+            var price = document.querySelector("#price").value;
+
+            switch(true){
+
+                case price>1500 :
+                price*=0.85;
+                break;
+
+                case price>1000 :
+                price*=0.87;
+                break;
+
+                case price>700 :
+                price*=0.9;
+                break;
+
+                case price>500 :
+                price*=0.93;
+                break;
+
+                case price>300 :
+                price*=0.95;
+                break;
+
+                default:
+                    price*=0.98;                
+            }
+
+            document.querySelector(".result").innerHTML = `Son fiyat: <b>${price}</b>`;
+        }
+    </script>
+
+    
+</body>
+</html>

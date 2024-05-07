@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eval</title>
+</head>
+<body>
+    <h2>Eval Function</h2>
+    
+    <input type="text" id="input" placeholder="Islem Giriniz...">
+    <button onclick="calculate()">Hesapla</button>
+    <div id="result"></div>
+
+
+    <script>
+
+// eval fonsiyonu string ifadeleri number olarak calistirmak icin kullanilir. Fakat guvenlik acigi olusturur.
+      //  alert (eval("Math.sqrt(3+5*9/2-1)")).tofFixed(0));
+
+        function calculate(){
+            let inputValue = document.querySelector("#input").value;
+            let result = eval(inputValue).toFixed(2); /* toFixed(...) ile sayinin virgulden sonra kac rakam alacagimizi belirleyebiliriz. bu bir yuvarlama islemidir. */
+            document.querySelector("#result").innerHTML = result;
+        }
+
+/* 
+        Mantıksal VE atamasi  x &&= f()   x && (x = f())
+        Mantıksal VEYA ataması  x ||= f()   x || (x = f())
+        Birleştirme atamasını geçersiz kıl  x ??= f()   x ?? (x = f())
+*/
+    </script>
+</body>
+</html>

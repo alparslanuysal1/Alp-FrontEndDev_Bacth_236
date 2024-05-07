@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nullish Practice</title>
+</head>
+<body>
+    <h2>Nullish Practice</h2>
+    <h3 id="result"></h3>
+
+
+    <script>
+        
+        // console.log('Ayşe "Javascript" öğreniyor.')
+        // console.log("Ayşe 'Javascript' öğreniyor.")
+        // console.log(`Ayşe 'Javascript' öğreniyor.`)
+        // console.log(`Ayşe "Javascript" öğreniyor.`)
+        /* backtick içinde hem tek hem çift tırnak yazılabilir.. */
+
+        function calculateArea(a,b){
+           // let area = (a == null || a == undefined ?0 :a) * (b == null || b == undefined ?0 :b);
+
+            let area = (a ?? 0) * (b ?? 0); // bos bir deger gelse dahi kodlar calisir ve bizim default islemimiz yaptirilir
+
+            document.querySelector("#result").innerHTML = "Alan: " + area;
+        }
+
+        calculateArea(5,4); // fonksiyon bu sekilde cagirilir.
+    </script>
+    
+</body>
+</html>

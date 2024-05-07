@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<body>
+    <h2>Function</h2>
+    <input type="number" placeholder="Dogum Yilinizi Giriniz..." onchange="calculateAge5(this.value)"> <!-- inputu tetikleyen event onchange dir -->
+    
+    <!-- <button onclick="calculateAge()">Yasimi hesapla</button> -->
+
+    <script>
+
+        function calculateAge(){
+            console.log(`Benim yasim: ${2024 - 1980}`);
+        }
+
+        calculateAge(); // bu sekilde function u cagirdik ve asagidakini calistirir. ayni isimde fonksiyonlar varsa en alttakini calistirir.
+
+        ////////////////////// 
+        //JavaScriptte parameterleri farkli olsa da ayni isimdeki functionlari ayni function olarak gorur. 
+        function calculateAge2(dateOfBirth){
+            console.log(`Benim yasim: ${2024 - dateOfBirth}`);
+        }
+
+        //parametreleri degistirerek fonksiyonu baska yerde kullandik!
+        calculateAge2(1982);
+        calculateAge2(1994);
+
+///////////////////////////////////////////////////
+        //return isleviyle function'un sonucunu bir degiskene atayabiliriz. 
+        function calculateAge3(dateOfBirth){
+            return `Benim yasim ${2024 - dateOfBirth}`;
+        }
+
+        let x = calculateAge3(1985); // function'un ismiyle ve bir parametre belirterek x degiskenine function sonucunu atiyoruz.
+        console.log(x); 
+
+        function myFunction(a,b){
+            return a+b;
+        }
+
+        let y = myFunction(3,4) * 2 ;
+        /* alert(y); */
+
+//////////////////////////////////////////////////////////////////
+
+        console.log(new Date());
+
+        function calculateAge4(dateOfBirth){
+            let date = new Date();
+            let thisYear = date.getFullYear();
+
+            return `Benim yasim ${thisYear - dateOfBirth}`;
+        }
+
+        let z = calculateAge4(1987);
+        console.log(`1987 de dogdum: ${z}`);
+
+        console.log(calculateAge4(1983));
+
+/////////////////////////////////////////////////
+        
+        function calculateAge5(birthDate){
+            // let birthDate = document.querySelector("input").value;
+            // let birthDate = event.target.value;
+
+            let thisYear = new Date().getFullYear();
+
+            document.write(`Yasiniz: ${thisYear - birthDate}`); //event.target ==> bu function'u calistiran input demektir.
+        }
+
+/*
+     -------3 yöntemle input içindeki değeri alabiliriz-------
+     1/ let birthDate = document.querySelector("input").value;
+     2/ let birthDate = event.target.value;
+     3/ yada inputu en başta onchange eventi içinde çağırabiliriz..
+     onhange="calculateAge5(this.value)"
+     function calculateAge5(birthDate){
+     } 
+*/
+
+        
+    </script>
+</body>
+</html>

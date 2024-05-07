@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do While Factorial</title>
+</head>
+<body>
+    <h2>Do While Factorial</h2>
+
+    <input type="text" name="" id="num">
+    <button onclick="calculate()">Hesapla</button>
+    <div class="result"></div>
+
+
+    <script>
+        function calculate(){
+
+            //Number(), input bos oldugunda 0, string oldugunda NaN dondurur. Bosluk karakteri yazsak da 0 dondurur.
+            let num = Number(document.querySelector("#num").value);
+            console.log(num);
+            let factorial = 1; // 1 carpmada etkisiz eleman.
+
+            // karsilastirma operatorleri karsilastirilamayacak bir durum gorurse orn:"NaN>0" False dondurur.
+            // 3 integer/tam sayi, 3.2 decimal/Ondalikli 
+            if(num>0 && Number.isInteger(num)){ // number sifirdan buyuk ve tam sayi midir diye sorgular
+
+                do {
+                    factorial *= num; //factorial = factorial * num;
+                    num--;
+                } while(num>0);
+                document.querySelector(".result").innerHTML = `Faktoriyel sonucu: ${factorial}`;
+            }
+            
+            else{
+                document.querySelector(".result").innerHTML = `Lutfen gecerli bir sayi giriniz`;
+            }
+
+        }
+    </script>
+</body>
+</html>

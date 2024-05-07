@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Loop Discount</title>
+</head>
+<body>
+    <h2>Discount Rate Uygulamasi</h2>
+    Bir ul listesinde ürün isimleri
+    ve fiyat bilgileri
+    bulunmaktadır. Textbox a
+    girilen indirim oranı kadar
+    listeye indirim uygulayan
+    programı yazınız.
+
+    <input type="number" id="discount">
+    <button onclick="makeDiscount()">Indirim Uygula</button>
+
+    <ul>
+        <li>Notebook: <span>1500</span>$</li>
+        <li>Tablet: <span>500</span>$</li>
+        <li>Telefon: <span>500</span>$</li>
+        <li>Klavye: <span>100</span>$</li>
+        <li>Mause: <span>100</span>$</li>
+        <li>USB Card: <span>50</span>$</li>
+        <li>Monitor: <span>250</span>$</li>
+        <li>Headphone: <span>700</span>$</li>
+        <li>Memory Card: <span>150</span>$</li>
+
+    </ul>
+
+    <script>
+        // 1 - once kullanicidan indirim oranini alacagiz
+        // 2 - fiyatlari alacagiz
+        // 3 - fiyatlara indirim oranini uygulayacagiz.
+        // 4 - indirimli fiyatlari span taglarina yazdiracagiz. 
+        /* function makeDiscount(){
+            
+            let discount = document.querySelector("#discount").value;
+
+            let productsList = document.querySelectorAll("#products li span"); //array yani dizi seklinde bir veri kumesi olarak bu degiskeni tanimladik
+            console.log(productsList);
+
+            for (let i=0; i<productsList.length; i++) {
+                let price = productsList[i].innerText;
+                let newPrice = price - (price * discount/100);
+                productsList[i].innerText = newPrice;
+            }
+        }  */
+
+        function makeDiscount(){
+
+            let discount = document.querySelector("#discount").value;
+            let productsList = document.querySelectorAll("ul li span");
+            console.log(productsList);
+
+            for(let i=0; i<productsList.length; i++){
+
+               /*  let price = productsList[i].innerText;
+                let newPrice = price - (price * discount/100); */
+                
+                let newPrice = productsList[i].innerText - (productsList[i].innerText*discount/100);
+
+                productsList[i].innerText = newPrice;
+
+            }
+
+        }
+
+
+    </script> 
+</body>
+</html>

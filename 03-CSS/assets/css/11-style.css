@@ -1,0 +1,42 @@
+body{
+    font-family:"Roboto" ;
+}
+
+
+h1.title{
+    font-size: 2.1rem;
+    font-weight: bolder;
+    color:darkred;
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+    cursor:pointer;
+
+}
+
+/*  text-transform: uppercase; tüm harflari büyük yapar  */
+
+ul.menu{
+    background-color: bisque;
+    width: 300px;
+    line-height: 3rem;
+}
+/* line-height: satırlar arası boşluğu düzenlemek için kullanılır */
+
+ul.menu li{
+    list-style-type:"✅";
+    list-style-position: inside;
+    padding:0px;
+}
+
+ul.menu li a{
+    text-decoration: none;
+}
+
+p.content{
+text-align: justify; /* metni iki yana yaslar */
+font-style: italic;
+font-family: "Roboto", cursive;
+font-size: 1.5rem;
+
+}

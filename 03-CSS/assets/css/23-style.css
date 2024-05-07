@@ -1,0 +1,49 @@
+nav.navMenu{
+    background-color: rgb(181, 120, 239);
+    display: inline-block;
+    margin:15px;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+nav.navMenu button.navBtn{
+    background-color: rgb(177, 94, 80);
+    padding:15px;
+    border-radius: 5px;
+    font-size:1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+nav.navMenu ul{
+    display: none;
+    list-style-type: "👌";
+    padding:0;
+    font-weight: 500;
+    list-style-position: inside;
+    
+}
+
+nav.navMenu:hover ul{
+    display: block;
+}
+
+nav.navMenu ul li{
+    line-height: 2rem;
+}
+
+nav.navMenu ul li a{
+    text-decoration: none;
+    
+
+}
+nav.navMenu ul li:hover{
+    
+    background-color: rgb(147, 48, 240);
+}
+nav.navMenu ul li:hover a{
+    color:black;
+    font-weight: 600;
+}

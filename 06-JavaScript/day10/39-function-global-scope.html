@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function - Global Scope</title>
+</head>
+<body>
+
+    <h2>Function - Global Scope</h2>
+
+
+    <script>
+
+        var num = 5; //Global scope olarak tanimladigimiz icin her yerden erisilebilir    
+        function myFunction(){
+            var x = 20;  // function scope oldugu icin sadece function icerisinden erisilebilir.
+            let y = 30;
+            const z =40;
+
+            console.log (x, y, z);
+            console.log(num);
+
+            num = 7;
+        }
+
+        console.log(num); // num => 5'tir. cunku fonksiyon henuz cagirilmadi.
+        myFunction();
+        console.log(num); // num=>7 degerini alacaktir. cunku ustunde fonksiyonu cagirdik. zaten num  da global scope olarak verilmisti
+
+       // console.log (x, y, z); // x, y, z icin "is not defined" hatasi verir.
+
+
+       /////////////////////////////////////////////
+
+       var num2 = 15; // global scope
+
+       function myFunction2(){
+        var num2 = 25; // function scope
+        console.log(num2); // 25
+        num2 = 35; 
+        console.log(num2); // 35
+
+       }
+
+       myFunction2();
+
+       console.log(num2); // 15. yukarida fonksiyonu cagirmis olsak da function icinde num2 olarak baska bir degislen atadigimiz icin num2 nin tum degerleri function icinde kalir. bu consola global tanimladigimiz num2 gelir.
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    
+
+    <input type="text" id="name" value="Altarin Oglu Tarkan">
+    <input type="text" id="message">
+
+    <input type="text" id="data" style="margin: 2rem;">
+
+
+    <button id="btn" onclick="showData()">Click Me</button>
+
+    <p class="input"></p>
+
+    
+
+<script>
+  let nameEl=document.querySelector("#name");
+   // yukarıda value yu yana yazarsam sonra boşaltamam bunu nedenle aşağıdaki gib devam ettim
+  let textEl=nameEl.value;
+
+  let messageEl=document.querySelector("#message");
+/* let message = `Selam sana ${textEl}`; */
+  let message= `Selam sana ${textEl}`; // bir inputtan yada form elemanından değer alıp okurken inner.text yada inner.HTML kullanılmazzz..
+
+
+  messageEl.value=message;
+  /*  messageEl.value = message; */
+
+
+
+function showData(){
+    let dataEl=document.querySelector("#data");
+    let data = dataEl.value;
+    console.log(data);
+    document.querySelector(".input").innerHTML=`${data}`;
+
+
+
+}
+
+
+
+
+</script>
+
+</body>
+</html>

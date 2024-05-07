@@ -1,0 +1,18 @@
+:root{
+    :has(input[name="color-scheme"][value="system"]:checked){
+        color-scheme:light dark;
+    }
+    &:has(input[name="color-scheme"][value="dark"]:checked){
+        color-scheme:dark;
+    }
+    &:has(input[name="color-scheme"][value="light"]:checked){
+        color-scheme:light;
+    }
+
+} 
+ 
+body{
+    background-color:canvas;
+    color:canvasText;
+}
+

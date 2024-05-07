@@ -1,0 +1,39 @@
+*{
+
+    color:red;
+
+}
+
+.title{
+    color:green;
+
+}
+
+h1{
+    color:blue;
+    text-align: center;
+}
+
+h1.title{
+    color:purple;
+
+}
+
+p.p-1El{ /* tanımlama ne kadar ayrıntılıysa biçimlendirme o kadar etkilidir ayrıntılı tanımlama internal tanımlamayı dahi ezer*/
+    color: rgb(38, 229, 229) !important;
+}
+
+h2{
+    background-color: green !important;
+}
+body section{
+    color: aqua;
+}
+
+body section:nth-child(2){
+    color:black
+}
+
+.sosyal-medya a{
+    color:blue
+}

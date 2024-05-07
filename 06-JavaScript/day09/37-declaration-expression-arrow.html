@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonksiyon Cesitleri</title>
+</head>
+<body>
+    <h2>Fonksiyon Cesitleri</h2>
+    
+    <script>
+        declarationFunc(); //function declaration, tanimlandigi satirin ustunde dahi cagirilabilir. Buna hoisting ozelligi denir.
+        function declarationFunc(){
+            console.log("Bu fonksiyon declaration olarak olusturulmustur.");
+        }
+        declarationFunc();
+
+        ////////////////////////////////////////////
+
+      //  expressionFunc(); //function expression, tanimlandigi satirin yukarisinda cagirilamaz. Bunu bir degisken olarak olusturduk.
+
+        var expressionFunc = function(){
+            console.log("Bu fonksiyon expression olarak olusturulmustur.");
+        }
+
+        expressionFunc();
+
+        //////////////////////////////////////////////
+
+        // arrowFunc(); // arrow function tanimlandigi satirin ustunde cagirilamaz. bunu da degisken olarak tanimladik
+
+        var arrowFunc = () => {
+            console.log("Bu fonksiyon arrow olarak olusturulmustur.");
+        }
+
+        arrowFunc();
+
+
+
+
+    </script>
+</body>
+</html>

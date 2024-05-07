@@ -1,0 +1,36 @@
+:root{
+    --renk1:rgb(11, 11, 105);
+    --renk2:rgb(27, 183, 183);
+    --background:rgb(76, 194, 76);
+    --borderButton:gray;
+}
+div.btn-group{
+    padding: 3rem;
+    margin: 5rem auto;
+    background-color:var(--background) ;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+div.btn-group>button{
+    flex: 0 0 100px;
+    background-color: var(--renk1);
+    color: var(--renk2);
+    cursor: pointer;
+    font-size: 1.4rem;
+    padding: 10px ;
+    border: 5px solid var(--borderButton);
+    border-radius: 10px;
+}
+div.btn-group>button:first-child{
+    border-radius: 30px 10px 10px 30px;
+}
+div.btn-group>button:last-child{
+    border-radius: 10px 30px 30px 10px;
+}
+div.btn-group>button:hover{
+    background-color: var(--renk2);
+    color: var(--renk1);
+}

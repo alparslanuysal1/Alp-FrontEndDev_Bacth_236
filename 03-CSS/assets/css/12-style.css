@@ -1,0 +1,28 @@
+a:link{
+    color:goldenrod;
+    font-size: 1.4;
+}
+a:visited{
+    color:brown;
+}
+
+a:hover{
+    color:aliceblue;
+    background-color: crimson;
+    }
+
+h1.title{
+        color:chocolate;
+
+    }
+
+h1.title:hover{
+    color:red;
+    background-color: rgb(173, 210, 243);
+    border-radius: 7px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+a:active{
+    color:blueviolet;
+}

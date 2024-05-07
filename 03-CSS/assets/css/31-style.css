@@ -1,0 +1,48 @@
+div.container{
+    display: flex;
+     flex-direction:column; /*! column flexlerin yönünü dikey-kolon yapar */
+     justify-content: center; 
+   /*  justify-content: space-evenly; */
+/*  justify-content:start;
+    justify-content: end;
+    justify-content: center;
+    justify-content: space-between;  kutuları kenarlara yaslar diğerlerini eşit aralıklara böler
+    justify-content: space-around;  kenarlardaki kutuların kenara olan uzaklığı diğer kutuların araasındaki mesafenin yarısı kadardır.
+ */
+height: 100vh;
+align-items:end;
+}
+
+/* 
+flex-direction: row ise 
+justify-content: elementleri yatayda hizalar.
+align-items elementleri yatayda hizalar  
+*/
+
+/* 
+flex-direction: colums ise
+justify-content: elementleri dikeyde hizalar.
+align-items: elementleri yatayda hizalar
+*/
+
+.container div{
+    width: 100px;
+    text-align: center;
+    padding: 20px;
+}
+
+div.container div:nth-child(1){
+    background-color: rgb(162, 221, 104);
+}
+div.container div:nth-child(2){
+    background-color: rgb(50, 127, 204);
+}
+div.container div:nth-child(3){
+    background-color:aquamarine;
+}
+div.container div:nth-child(4){
+    background-color: rgb(0, 204, 255);
+}
+div.container div:nth-child(5){
+    background-color: rgb(212, 81, 224);
+}

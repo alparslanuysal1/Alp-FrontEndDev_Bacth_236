@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakamlar Toplami Practice</title>
+</head>
+<body>
+    <script>
+        //1+2+3 => 6
+
+/* 123 sayisinin rakamlar toplamini bulan kodu yaziniz  */
+        let sayi= 123;
+        let rakamlarToplami=0;
+        let birlerBas=0;
+
+/*      birlerBas=sayi%10;
+        rakamlarToplami=birlerBas+rakamlarToplami;
+        sayi=sayi/10;
+
+        birlerBas=sayi%10;
+        rakamlarToplami=birlerBas+rakamlarToplami;
+        sayi=sayi/10;
+
+        birlerBas=sayi%10;
+        rakamlarToplami=birlerBas+rakamlarToplami;
+        sayi=sayi/10
+ */
+
+
+        birlerBas = sayi % 10;
+        rakamlarToplami+= birlerBas;
+        sayi/= 10;
+
+        birlerBas = sayi % 10;
+        rakamlarToplami+= birlerBas;
+        sayi/= 10;
+
+        birlerBas = sayi % 10;
+        rakamlarToplami+= birlerBas;
+        sayi/= 10;
+
+        console.log("Rakamlar Toplami:" +rakamlarToplami);
+        console.log(Math.floor(rakamlarToplami)); //6
+        console.log(Math.ceil(rakamlarToplami)); //7
+
+
+        
+    </script>    
+</body>
+</html>

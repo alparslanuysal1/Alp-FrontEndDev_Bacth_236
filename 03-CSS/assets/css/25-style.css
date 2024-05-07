@@ -1,0 +1,52 @@
+h1.title{
+    color: blue;
+    background-color: aqua;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 10px;
+}
+
+p.about::first-letter{
+    font-size: 3.4rem;
+    color:brown;
+}
+
+p.about::first-line{
+    font-size: 1.2rem;
+    color: violet;
+
+}
+
+p.about::selection{
+    color:aliceblue;
+    background-color: blueviolet;
+}
+ul.list li::marker{
+    color: blue;
+    font-size:2rem;
+}
+
+h1.title::before{
+    content: "🤖";
+    color: rgb(223, 117, 117);
+    margin-right: 1rem;
+}
+h1.title::after{
+    content: "🤖";
+    color: rgb(223, 117, 117);
+    margin-left: 1rem;
+}
+
+span.spanEl::before{
+    content: "||";
+    font-size: 2rem;
+    font-weight: bold;
+    color: brown;
+}
+
+span.spanEl::after{
+    content: "||";
+    font-size: 2rem;
+    font-weight: bold;
+    color: brown;
+}

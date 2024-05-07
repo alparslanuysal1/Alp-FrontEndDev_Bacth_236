@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data types</title>
+</head>
+<body>
+    
+    <script>
+    
+//string: Metinsel ifadeler
+let myName= "Tarkan";
+console.log(myName, typeof myName, isNaN(myName));
+
+
+
+//number: tam sayisal ifadeler
+let number= 1040;
+console.log(number, typeof number, isNaN(number));
+
+
+//Biglnt /* buyuk tam sayi */
+let bigNumber= 1234n;
+console.log(bigNumber, typeof bigNumber,); //isNaN(bigNumber) X sayi olup olmadigini tespit edemiyor
+/*05-data-types.html:25 Uncaught TypeError: Cannot convert a BigInt value to a number
+    at isNaN (<anonymous>)*/
+
+
+//boolean
+let isHappy= false;
+console.log(isHappy, typeof isHappy, isNaN(isHappy)); //true=1 false=0 yani sayidir
+
+
+//undefined
+let age;
+console.log(age, typeof age, isNaN(age)); 
+
+
+//null
+let car = null;
+console.log(car, typeof car,isNaN(car)); //0 bir sayidir
+
+
+//symbol
+let id= Symbol();
+console.log(id, typeof id); // isNaN(id) X sayi olup olmadigini tespit edemiyor
+/* 05-data-types.html:47 Uncaught TypeError: Cannot convert a Symbol value to a number
+    at isNaN (<anonymous>) */
+
+//float-number
+let piNumber = 3.14;
+console.log(piNumber, typeof piNumber, isNaN(piNumber));
+
+
+//non-primitive data types
+
+//array
+
+let arr=["elma","armut","muz"];
+console.log(arr, typeof arr, isNaN(arr));
+
+
+//object
+// function
+const person={
+
+    name:"Tarkan",
+    age:25,
+    city: "Istanbul",
+    country: "Turkey",
+    married: false,
+     
+    fruits: ["elma", "armut", "muz"],
+};
+
+console.log(person, typeof person, isNaN(person));
+
+
+let sayi='22';
+console.log(sayi, typeof sayi, isNaN(sayi)); /* string yani metin veri bicimi olsa da
+ metnin icinde sayi bulundugu icin onun sayi oldugunu anladi. */
+
+
+let x=34;
+let y=0;
+console.log(x/y);
+let= z=x/y;
+console.log((z), isNaN(z), typeof (z)); //sonsuz da olsa bir sayidir.
+
+    </script>
+</body>
+</html>

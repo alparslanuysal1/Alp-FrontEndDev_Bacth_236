@@ -1,0 +1,35 @@
+body{
+    background-color: azure;
+
+}
+
+nav.navMenu ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    background-color: blueviolet;
+    padding: 20px;
+}
+
+nav.navMenu ul li {
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+nav.navMenu ul li a{
+    text-decoration: none;
+    background-color: rgb(236, 169, 98);
+    color:lightcyan;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 10px;
+    margin-right: 10px;
+
+}
+
+nav.navMenu ul li a:hover{
+    background-color: turquoise;
+    color:black;
+    border-radius: 10px 0 10px 0;
+}

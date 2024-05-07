@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function Practice</title>
+    <style>
+        input, button,p{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Arrow Function Practie</h2>
+    <!-- 
+        1-)Ürün fiyatı, kdv oranı ve indirim oranı parametre
+olarak alıp son fiyatı hesaplayan fonksiyonu arrow
+function ile yazınız. 
+
+        2-)Ürün fiyatı 1500 üzerinde ise
+extra 10% indirim daha uygulanacaktır.
+
+        3-)İndirim uygulanmamış ise vergi hesaba
+katılmayacaktır. -->
+
+    Fiyat:  <input type="number" id="price"> <br>
+    Vergi:  <input type="number" id="tax"> <br>
+    Indirim:    <input type="number" id="discount"><br>
+
+    <button onclick="showLastPrice()">Hesapla</button>
+
+    <p id="result"></p>
+    
+    <script>
+
+        const calculate = (price, tax, discount) => {
+
+            if(price> 1500) discount +=10; // if lerde tek satirda ifademizi yaziyorsak suslu paranteze{} ihtiyac yok
+            if(discount <= 0) tax = 0;
+
+            let totalTax = price * tax /100;
+            let totalDiscount = price * discount /100;
+            let lastPrice = price + totalTax - totalDiscount;
+
+            return lastPrice; //dondur. yani fonksiyonun sonucu bu olsun
+        }
+
+        const showLastPrice = () => {
+            let price = Number(document.querySelector("#price").value);
+            let tax = Number(document.querySelector("#tax").value);
+            let discount = Number(document.querySelector("#discount").value);
+
+            let lastPrice = calculate(price, tax, discount);
+
+            document.querySelector("#result").innerHTML = `Son Fiyat: ${lastPrice} TL`;
+
+        }
+
+        showLastPrice()
+
+
+
+    </script>
+</body>
+</html>

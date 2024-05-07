@@ -1,0 +1,21 @@
+nav.menu{
+    background-color:bisque;
+    width: 300px;
+    text-align: center;
+    color:steelblue;
+    font-size: 1.4rem;
+    line-height:2.5rem;
+
+}
+
+h1.title{
+color:purple;
+text-align: center;
+
+}
+
+nav.menu div.active{
+background-color: darksalmon;
+color:darkred;
+
+}

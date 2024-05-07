@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+<body>
+
+    <h2>Loops</h2>
+
+
+    <script>
+        //for loop
+        // ilk sefer iceri girerken artirma islemi yapmadan girer. artirmayi ciktiktan sonra yapar
+        for(let i=0; i<10; i=i+2){
+            document.write("Merhaba <br>");
+        }
+
+        //while loop
+        // once degisken verilir sonra while icine sartlar yazilir. sartlar dogru oldugu muddetce calis demir
+        let n = 1
+        while(n <= 10){
+            document.write("<br> Merhaba Dunya");
+            n++
+        }
+
+        // do-while loop
+        // once kosula bakmadan islemi yapar. sonra kosulu kontrol eder ve dogru oldugu muddetce diger seferlere girer. 
+
+        k = 1;
+        do{
+            document.write("<br> Hello");
+            k++;
+        } while ( k<=10)
+
+    </script>    
+</body>
+</html>

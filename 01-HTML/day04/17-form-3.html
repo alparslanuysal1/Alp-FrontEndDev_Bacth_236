@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form-2</title>
+</head>
+<body>
+    
+    <form action="/users/login" method="post">
+        <input type="text" placeholder="Enter your name" name="name" required>
+            <br>
+            <br>
+        <input type="text" placeholder="Enter your Lastname" required>
+            <br>
+            <br>
+        <input type="number" placeholder="Enter Your Salary" name="salary" required>
+            <br>
+            <br>
+        <input type="email" placeholder="Enter Your email" name="email" required>
+            <br>
+            <br>
+        <input type="password" placeholder="Enter your password" name="password" required
+        
+        minlenght="5" maxlength="12"
+            <br>
+            <br>
+        <input type="Tel" placeholder="Enter Your Phone Number" name="phone">
+            <br>
+            <br>
+        <input type="search" placeholder="Search something" name="search">
+            <br>
+            <br>
+            <input type="url" placeholder="Enter your url" name="website">
+            <br>
+            <br>
+            <!-- Sadece radio butonlarda ya biri ya biri secenek sekloinde yapilabilir. bunun icin id lerin ayni olmasi gerekir -->
+        <input type="radio" id="male" name="gender">
+        <label for="male">Erkek</label>
+
+        <input type="radio" id="female" name="gender">
+        <label for="male">Kadin</label>
+            <br>
+            <br>
+        <input type="checkbox" id="chk" name="chk-maas">
+        <label for="chk">Maasimi eksiksiz aldim</label>
+        
+        <input type="checkbox" id="chk" checked name="chk-maas">
+        <label for="chk">Maasimi almadim</label>
+            <br>
+            <br>
+        <input type="file" name="cv">
+            <br>
+            <br>
+        <input type="color" name="cl"> 
+            <br>
+            <br>
+        <input type="range" name="rang"> 
+<br>
+<br>
+        <input type="date" name="date" id="date">
+<br>
+<br>
+        <input type="datetime-local" name="dtl" id="dtl">
+<br>
+<br>
+        <input type="time" name="time">
+<br>
+<br>
+        <input type="week" name="week" id="week">
+<br>
+<br>
+        <input type="month" name="month" id="month">
+
+<br>
+<br>
+        <select name="cities" id="cities" multiple>
+            <option vlue="choese">Choose Your City</option>
+            <option vlue="58">Ankara</option>
+            <option vlue="06">Trabzon</option>
+            <option vlue="25">Artvin</option>
+            <option vlue="38">Bayburt</option>
+            <option vlue="37">Sinop</option>
+            <option vlue="48">Giresun</option>
+            <option vlue="50">Van</option>
+            <option vlue="58">Gaziantep</option>
+            <option vlue="47">Kars</option>
+            <option vlue="83">Mardın</option>
+            <option vlue="37">Kastamonu</option>
+            
+        </select>
+
+        <textarea name="txt" id="txt" cols="30" rows="12" minlength="10" maxlength="200"> </textarea>
+        <br> <br>
+
+        <input type="button" value="Save">
+        <input type="reset" valeu="clear"> 
+        <input type="submit" value="Send">
+        <button>Cancel</button>
+       
+
+
+
+
+
+    </form>
+
+</body>
+</html>

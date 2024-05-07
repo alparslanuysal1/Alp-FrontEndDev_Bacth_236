@@ -1,0 +1,41 @@
+div.container{
+  
+    display: flex;
+    flex-direction:row;
+    justify-content:center; /*! default flex-start */
+    height: 100vh;
+    align-items:strech;/*! default strech */
+    gap:1rem;
+    flex-wrap:wrap;  /* flex-wrap : wrap | nowrap | wrap reverse (Sığmayanları ters yöne kaydırılır.) */
+    align-content: center;
+   /* align-items'ın align'ini aldık justify-contentin contentini aldık===> iki sine aynı anda değer verebiliyoruz bu sayede. */
+   
+}
+.container div{
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    padding: 20px;
+}
+div.container div:nth-child(1){
+    background-color: rgb(162, 221, 104);
+    flex:0 0 200px;
+    margin-right: 150px;
+}
+div.container div:nth-child(2){
+    background-color: rgb(50, 127, 204);
+    flex: 0 0 250px;
+}
+div.container div:nth-child(3){
+    background-color:aquamarine;
+    flex: 0 3 250px;
+}
+div.container div:nth-child(4){
+    background-color: rgb(0, 204, 255);
+    flex: 0 0 250px;
+    margin-right: 50px;
+}
+div.container div:nth-child(5){
+    background-color: rgb(212, 81, 224);
+    flex: 0 0 150px;
+}

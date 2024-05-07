@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logical Operators</title>
+</head>
+<body>
+    <script>
+
+
+let x=true;
+let y=false;
+
+console.log(x&&y); //false
+console.log(x||y); //true
+ 
+let s2="kus";
+let s3="kedi";
+console.log(s2||s3); //kus || --> true yu  bulunca onun degerini gider yazar. true bulamazsa son degeri yazar
+
+console.log(s2&&s3); //kedi && --> false yu bulunca onun degerini gider yazar. false bulamazsa son degeri yazar
+
+let z = "true";
+let k = "kedi";
+let m = "kus";
+let n = null;
+console.log(z || k || m || n); // ilk ture deger olan z yi string veri seklinde "true" diye yazar.
+console.log (typeof z, z);
+console.log(z&&k&&m&&n); // null yazar
+console.log(m && n);    // null yazar
+
+
+    </script>
+   
+</body>
+</html>

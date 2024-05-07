@@ -1,0 +1,35 @@
+div.box p{
+    color: black;
+    background-color: violet;
+} /*! parentin tüm soyunu seçer */
+
+div.box>p{
+    color:blue;
+    background-color:blanchedalmond ;
+} /*! parentin sadece childlarını seçer */
+
+
+ul.list ol li{
+    color:aqua;
+}
+
+/*! Ikisi arasindaki farka dikkat et! fark=">". Ustelik alttaki daha ayrintili bir tanimlama oldugu için baskın geldi*/
+
+ul.list ol>li{
+    color: red;
+}
+
+/*! "+" işareti kullanılarak bir element ten hemen sonra gelen ilk elemeni seçer.  */
+div.box + a{
+    color: rgb(19, 128, 30);
+    font-size: 2rem;
+ }
+ a.link+p{
+    background-color: aqua;
+ }
+ /*!  ~ (tilt) işareti kullanılarak bir element ten hemen sonra gelen tum(belirtilen) elementleri seçer
+ */
+ div.box~a{
+    color: purple;
+    font-weight: 900;
+ } 

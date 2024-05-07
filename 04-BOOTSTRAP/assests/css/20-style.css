@@ -1,0 +1,29 @@
+.cardMenu{
+    text-align:center;
+}
+
+.card-title{
+    text-transform: uppercase;
+}
+.cardMenu .card .card-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0;
+}
+
+.cardMenu .card .card-footer>div{
+    border-right: 1.3px rgb(180, 194, 180) solid;
+    flex:1;
+}
+
+.cardMenu .card .card-footer>div:last-child{
+    border-right: none;
+}
+
+@media screen and (min-width: 992px){
+    .cardMenu div[class^="col"]:nth-child(2) .card {
+        transform: scale(1.1) !important;
+    }
+
+}

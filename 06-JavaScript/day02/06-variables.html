@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables-2</title>
+</head>
+<body>
+    
+    <script>
+
+
+/* var ileayni isimle birden cok degisken tanimlanabilir */
+        var degisken = "20";
+        console.log(degisken, typeof degisken);
+
+
+        var degisken = 20;
+        console.log(degisken, typeof degisken);
+
+        var degisken = true;
+        console.log(degisken, typeof degisken);
+
+
+        let numberStr = '20'; //let ile ayni suslu parantez-scope icinde ayni degisken isminde baska bir degisken tanimlanamaz
+        console.log(numberStr, typeof numberStr, isNaN(numberStr));
+
+        numberStr=78;
+        console.log(numberStr);
+
+        const id=1111;
+        console.log(id); 
+
+
+         /*ayni scope  icerisinde const ve let ile ayni isime sahip birden cok 
+         degisken tanimlanamaz */
+    </script>
+</body>
+</html>

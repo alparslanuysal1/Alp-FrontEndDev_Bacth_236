@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model Practice</title>
+</head>
+<body>
+
+    <div style="margin: 3rem;">
+        
+        <input type="number" id="num1">
+        <input type="number" id="num2">
+        <button class="btn" onclick="calculate()">Topla</button>
+        <div class="result"></div>
+        
+    </div>
+
+
+
+<script>
+
+function calculate(){
+
+  let inputEl1=  document.querySelector("#num1");
+  let inputEl2=  document.querySelector("#num2");
+  let resultEl=  document.querySelector(".result");
+  //kullanicidan gelen degerler her zaman string olarak gelir. Bu sebeple onu numbera cevirmeliyiz.
+   
+  let result=Number(inputEl1.value) + Number(inputEl2.value);
+
+  resultEl.innerHTML=`Bu islemin sonucu : ${result}`;
+
+  inputEl1.value="";
+  inputEl2.value="";
+}
+
+
+
+  function calculate(a,b) { //calculate(a,b) bir metod adidir. 
+
+    return a+b;
+
+}
+
+let result = calculate(12,13);
+//methodun calisabilmesi icin cagirilmasi gerekli!
+console.log(12+result);
+
+
+</script>
+    
+</body>
+</html>

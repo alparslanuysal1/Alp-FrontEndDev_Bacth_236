@@ -1,0 +1,36 @@
+.bg{
+    padding: 50px;
+    margin:50px;
+    margin-bottom: 2rem;
+}
+
+.bg-1{
+    background-image: linear-gradient(yellow,rgb(200,53,200));
+}
+
+.bg-2{
+    background-image: linear-gradient(to right, blue,red,yellow);
+}
+
+.bg-3{
+    background-image: linear-gradient(60deg,green,rgb(255, 0, 43), aqua);
+}
+
+.bg-4{
+    background-image: linear-gradient(to right, pink, cyan 50%, magenta) ;
+}
+
+.bg-5{
+    background-image: radial-gradient(circle, red, blue, green);
+}
+
+.bg-6{
+    background-image: radial-gradient(ellipse, royalblue,pink, purple, violet);
+}
+
+.bg-7{
+    background-image: radial-gradient(circle,blue 1%,pink,red,green 50%);
+}
+.bg-8{
+    background-image: linear-gradient( 89.9deg,  rgba(255,243,110,1) 16.9%, rgba(30,204,214,1) 55.1%, rgba(5,54,154,1) 90.7% );
+}

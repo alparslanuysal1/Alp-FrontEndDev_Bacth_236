@@ -1,0 +1,43 @@
+body,html{
+    width:80%;
+    height: 100%;
+    background-color: aqua;
+
+}
+div.ikinciclass-kelimesi{
+    color:aliceblue;
+    background-color: black; /* etkili olmadı */
+}
+div.kutu-1{
+    background-color: chocolate;
+    width: 50%;
+    height: 150px;
+}
+div.kutu-3{
+    background-color:bisque;
+    width: 50%;
+    height: 40%;
+    font-size: 2em;
+}
+
+div.kutu-4{
+    background-color:cornflowerblue;
+    width: 5em ;
+    height: 50%;
+    
+}
+
+div.kutu-5{
+    background-color:brown;
+    width: 5rem;
+    height: 50%;
+    font-size: 2em;
+}
+
+div.kutu-6{
+    background-color:blue;
+    width: 50vw; /* çerceveye göre ayarlanır */
+    height: 10vh;
+    font-size: 48px;
+
+} 

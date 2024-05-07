@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Number Game</title>
+    <link rel="stylesheet" href="./CSS/42-style.css">
+</head>
+<body>
+    <h2>Find Number Game</h2>
+
+    <div class="card">
+        <input type="number" id="num" placeholder="1 ile 100 arasi bir sayi giriniz">
+        <button class="btn-start" onclick="startGame()">Oyunu Baslat</button>
+        <button class="btn-guess" onclick="guessNumber()">Tahmin Et</button>
+        <label id="result"></label> <!-- label inline elementtir. asagi ve yukari stil alamazlar. displayini degistirmek lazim -->
+        <br>
+    </div>
+    
+    <script src="./JS/42-script.js"></script>
+</body>
+</html>

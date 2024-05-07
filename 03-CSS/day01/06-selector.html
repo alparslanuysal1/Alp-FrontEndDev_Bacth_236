@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector-1</title>
+    <style>
+        *{ /* tum sayfaya etki eden selector (universal) */
+            color:springgreen;
+            background-color: steelblue;
+        }
+        
+        p{
+            color:rgb(66, 14, 105);
+            text-align: center;
+        }
+
+        p.pEl{ /* detayli bır tanımlamaolduğu için daha yakın olan diğer biçimlendirmeleri ezdi */
+            color:blueviolet
+        }
+
+        .pEl{ /* . yazdiktan sonra class ismini belirtiriz  */
+            color:red;
+            background-color: azure;
+        }
+
+        #cssId{
+            background-color:brown;
+            color:black;
+            text-align: center;
+            font-size: 30px;
+            font-weight: 700;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Hello Selector-1</h1>
+
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum doloribus, sunt iure dolore ipsum error. Adipisci enim dolore at ullam eum aliquam omnis porro natus doloribus eaque explicabo, minima labore!
+    </p>
+    <ol class="pEl">
+        <li>Lorem.</li>
+        <li>Qui.</li>
+        <li>Ea?</li>
+        <li>Molestias?</li>
+        <li>Eveniet.</li>
+    </ol>
+    <p class="pEl">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam recusandae veritatis architecto nobis tempore fugiat voluptas. Recusandae excepturi placeat illum perferendis distinctio doloribus ipsa, tempora fuga natus non, quae saepe?</p>
+
+        <h2 id="cssId">Css Tutorial</h2>
+</body>
+</html>

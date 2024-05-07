@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ternary-2</title>
+</head>
+<body>
+    <h2>Ternary-2</h2>
+
+    <input type="number" id="salary"> <br>
+
+    <input type="radio" name="job" id="retired" onchange="calculate('r')"> <!-- onchange==> bir eventtir. degistirildiginde demektir. onchange oldugunda bir fonksiyon calistir dedim -->
+    <label for="retired">Emekli</label>
+
+    <br>
+
+    <input type="radio" name="job" id="working" onchange="calculate('w')">
+    <label for="retired">Calisan</label>
+
+    <div id="result"></div>
+
+
+    <script>
+        /* iki farkli input ayni fonksiyonu calistiracak, fakat kendilerine has sonuc uretmeli. bunun icin inputlara tanimladigim fonksiyonda birparametre vermeliyiz */
+       /*  function calculate(workType) { // workType ==> 'w' || 'r'
+
+            let salary = 40000;
+
+            salary = workType == 'r' ? salary *0.9 : salary;
+
+            document.querySelector("#result").innerHTML = `Maas: ${salary}`;
+
+
+        }
+ */
+         function calculate(workType) { // workType ==> 'w' || 'r'
+
+            let salary = document.querySelector("#salary").value;
+
+            salary = workType == 'r' ? salary *0.9 : salary *1.1;
+
+            document.querySelector("#result").innerHTML = `Maas: ${salary}`;
+
+
+        } 
+    </script>
+</body>
+</html>

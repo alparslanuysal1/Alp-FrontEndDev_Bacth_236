@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Input Values</title>
+    <style>
+        input{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    Input-1<input type="text" id="input1" onchange="showValue(x)"><br>
+    Input-2<input type="text" id="input2" onchange="showValue(x)"><br>
+    Input-3<input type="text" id="input3" onchange="showValue(x)"><br><br><br>
+    
+
+    Input-4<input type="text" id="input1" onchange="showValue()"><br>
+    Input-5<input type="text" id="input2" onchange="showValue()"><br>
+    Input-6<input type="text" id="input3" onchange="showValue()"><br><br><br>
+    
+    
+    Input-7<input type="number" id="input1" onchange="showValue(this.type, this.value)"><br>
+    Input-8<input type="text" id="input2" onchange="showValue(this.value)"><br>
+    Input-9<input type="text" id="input3" onchange="showValue(this.value)"><br><br><br>
+
+
+    <script>
+        function showValue(x){
+            let input1 = document.querySelector("#input1");
+            let input2 = document.querySelector("#input2");
+            let input3 = document.querySelector("#input3");
+
+            if(x == 1) alert(input1.value);
+            if(x == 2) alert(input2.value);
+            if(x == 3) alert(input3.value);
+        }
+ 
+        /////////////////////////////////////
+
+         function showValue(){
+            alert(event.target.value); // event.target==> hangi inputa bir sey girilirse o calistirsin demek
+            alert(event.target.type);
+            alert(event.target.id);
+            alert(event.target.onchange);
+            alert(event.target.name);
+             
+        } 
+
+
+        /////////////////////////////////
+
+        function showValue (x , y = "parametre girilmedi" ){ //y de deger yoksa bunu ver demek
+            alert (x + " " + y);
+        }
+
+        /////////////////////////////////
+
+        function myfunction(a = 3,b = 2){ // a ya deger girilmemisse 3, b ye girilmemisse 2 ver demek.
+            console.log(a*b);
+        }
+
+        myfunction();
+
+
+
+    </script>
+</body>
+</html>

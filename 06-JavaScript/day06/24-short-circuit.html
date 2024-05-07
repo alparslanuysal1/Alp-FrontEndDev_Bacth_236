@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>short circuit</title>
+</head>
+<body>
+    <h2>Short Circuit</h2>
+
+    <input type="number" id="input" placeholder="0-100">
+    <button onclick="showNumber()">Goster</button>
+    <div id="result"></div>
+
+    <script>
+
+        function showNumber(){
+            let num = document.querySelector("#input").value;
+            let result = document.querySelector("#result");
+
+            /* if(num< 0 || num>100){
+                alert ("Lutfen 0 ile 100 arasinda bir sayi giriniz");
+            }
+
+            else{
+                result.innerHTML = num;
+            } */
+
+// yukaridaki if else dongusuyle ayni isi yapan short circuit kodu asagidadir
+
+            (num< 0 || num>100) && alert("Lutfen 0 ile 100 arasinda bir sayi giriniz");
+            (num >= 0 && num<=100) && (result.innerHTML = num);
+
+            // && false u arar bulasiya kadar okumaya devam eder. Bu sebeple true olan ifadeden sonra && koyduk ve alerti okuttuk. false olursa devamini okumaz ve asagiya iner. o ture dur ve false u aradigi icin okumayadevam eder. sonra parantez icini okuyup yapar. 
+            
+        }
+    </script>
+    
+</body>
+</html>

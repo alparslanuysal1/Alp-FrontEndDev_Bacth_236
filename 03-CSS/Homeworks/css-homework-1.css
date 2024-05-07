@@ -1,0 +1,63 @@
+   
+input.chkbx{
+    display: none;
+}
+
+nav.nav-bar{
+    width: 250px;
+    background-color: rgb(177, 177, 177);
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+}
+
+ nav.nav-bar ul{
+    margin: 0px;
+    padding: 0px;
+}
+nav.nav-bar ul li.menu{
+    display:none;
+    margin: 0;
+    padding: 0;
+}
+
+nav.nav-bar input.chkbx:checked ~ ul li.menu{
+ display: block;
+}
+
+nav.nav-bar label.chkbx-lbl{
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+}
+
+nav.nav-bar ul li.menu a{
+    text-decoration: none;
+    color: white ;
+    display: block;
+    padding:10px ;
+
+}
+/* nav.nav-bar div label.chkbx-lbl{
+    background-color: black;
+} */
+
+nav.nav-bar input.chkbx:checked + label{
+    background-color: black;
+}
+
+nav.nav-bar ul li.menu:hover{
+    background-color: rgb(100, 99, 99);
+
+}
+
+nav.nav-bar ul li.menu a::before{
+    content: "::";
+    color:black;
+}
+
+body{
+    border-radius: 50%;
+    background-attachment: fixed;
+    background-image: conic-gradient(yellow,red, rgb(69, 69, 69), skyblue);
+}

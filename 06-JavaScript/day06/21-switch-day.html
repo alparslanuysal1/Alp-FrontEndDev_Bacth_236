@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case - Day</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2>Switch Case - Day</h2>
+    <input type="number" id="day">
+    <input type="button" value="Göster" onclick="showDay()">
+    <div></div>
+
+    <script>
+        console.log(3 === "3"); //false
+
+        //switch === ile degiskenlerin type kontrolu de yapar
+        function showDay(){
+            let day = Number(document.getElementById("day").value);  /* bu id secicidir!  */ //document.querySelector("#day").value;
+            let message;
+
+            switch(day){
+                case 1: 
+                message = "Pazartesi";
+                break;
+
+                case 2: 
+                message = "Sali";
+                break;
+
+                case 3: 
+                message = "Carsamba";
+                break;
+
+                case 4: 
+                message = "Persembe";
+                break;
+
+                case 5: 
+                message = "Cuma";
+                break;
+
+                case 6: 
+                message = "Cumartesi";
+                break;
+
+                case 7: 
+                message = "Pazar";
+                break;
+
+                default: 
+                message = "Yanlis deger girdiniz!";	
+            }
+
+            document.querySelector("div").innerHTML = message;
+        }
+
+
+    </script>
+</body>
+</html>

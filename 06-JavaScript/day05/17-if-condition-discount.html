@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ndirim Uygulamasi</title>
+</head>
+<body>
+    <h2>İndirim Uygulamasi</h2>
+
+    <input type="number" id="price">
+    <button id="btn"onclick="calculate()">Hesapla</button>  <!-- onclick==> bir eventtir. onclick oldugunda bir fonksiyon calistir dedim -->
+    <div id="result"></div>
+    
+
+
+
+
+    <script>
+        function calculate() {
+            var price= document.querySelector("#price").value;
+            if (price>500) {
+                price *= 0.9; /* price= price*0.9 */
+            }
+
+            else if(price>300){
+                price*=0.93;
+            }
+            else{
+            price*=0.95;
+        }
+
+            document.querySelector("#result").innerHTML =`Son Fiyat: ${price}`; 
+        }
+    </script>
+</body>
+</html>

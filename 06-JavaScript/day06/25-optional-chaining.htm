@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimal Chaining</title>
+</head>
+<body>
+    <h2>Optional Chaining</h2>
+
+    <h3 id="name"></h3>
+    <h3 id="age"></h3>
+    <h3 id="address"></h3>
+
+
+
+    <script>
+
+        let user = {
+            name:"ayse",
+            age: 25,
+            address: {
+                city: "izmir",
+                country: "turkey",
+                
+            }
+        }
+
+        // var olup olmadigini bilmedigimiz objectleri secersek 
+
+        document.querySelector("#name").innerHTML = user.name;
+        document.querySelector("#age").innerHTML = user.age;
+        document.querySelector("#address").innerHTML = user.address.city + ": ";
+        document.querySelector("#address").innerHTML += user.address.country;
+
+    </script>
+    
+</body>
+</html>

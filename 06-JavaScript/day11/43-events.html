@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handlig</title>
+
+    <style>
+        button{
+            padding: 7px 20px;
+            margin: 10px;
+            font-size: 18px;
+            background-color: lightgreen;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Event Handlig</h2>
+
+    <button id="btn1" onclick="sayHello()">Hello1</button>
+    <button id="btn2">Hello2</button>
+    <button id="btn3">Hello3</button>
+    <button id="btn4">Hello4</button>
+    <button id="btn5">Hello5</button>
+    <button id="btn6">Hello6</button>
+
+    <script>
+        // 1. Yontem; HTML'de [onclick="sayHello()"] yazdik
+        function sayHello(){
+            alert('Merhaba Dunya')
+        }
+
+        // 2. Yontem;        
+        let btn2 = document.querySelector("#btn2");
+        btn2.onclick = sayHello;
+
+        // 3. Yontem;
+        let btn3 = document.querySelector("#btn3");
+        btn3.addEventListener("click", sayHello);
+
+        // 4. Yontem;
+        document.querySelector("#btn4").onclick = sayHello; // sayHello () demiyoruz. cunku oyle burada cagirmis oluruz
+
+        // Anonymous function ile
+        let btn5 = document.querySelector("#btn5");
+            btn5.onclick = ()=>{
+            alert("Merhaba Dünya");
+        }
+
+        btn5.addEventListener("click", ()=> alert("Merhaba Dunya"));
+
+        // Some other Events
+        let btn6 = document.querySelector("#btn6");
+            btn6.addEventListener("mouseover", function(){
+                btn6.style.backgroundColor = "coral";
+                this.style.backgroundColor = "lightyellow"; // bu da bir stil verme yolu
+            });
+            
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+h1.title{
+    color:blue;
+    background-color: violet;
+    margin-bottom: 2rem;
+    display: inline;
+    height: 250px;
+}
+
+span.spanEl{
+    color:rgb(224, 35, 158);
+    font-size: 1.4rem;
+    background-color: aqua;
+    margin-bottom: 2rem;
+    display: block;
+    height: 250px;
+}
+
+p.pEL{
+    color: bisque;
+    background-color: violet;
+    display: inline-block;
+    padding: 15px;
+    margin: 16px;
+}
+
+button.hidden{
+    /* display:none; */
+    font-size: 1.3rem;
+    font-weight: 900;
+    border: 5px dotted slateblue;
+    cursor: pointer;
+    margin-right: 30px;
+}
