@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Mutator Methods</title>
+</head>
+<body>
+    <h2>Array Mutator Methods</h2>
+
+    <script>
+        let numbers = [12,56,14,67,89,33,22];
+        console.log(numbers); // [12, 56, 14, 67, 89, 33, 22]
+        var colors = ["blue", "Green", "White", "Black"];
+        var result;
+
+        /* 
+            Mutator methods =>Dizi iceriginin degismesini saglarlar
+        Ekleyenler length'i dondurur,
+        Silenler sildigi elemani dondurur
+        Digerleri arrayin son halini dondurur */
+
+
+        // 1- push() arrayin sonuna eleman ekler ve arrayin yeni eleman sayısını döndürür.
+        numbers.push(65);
+        console.log(numbers); // (7) [12, 56, 14, 67, 89, 33, 22]
+
+        result = numbers.push(15, 105);
+        console.log(numbers); // [12, 56, 14, 67, 89, 33, 22, 65, 15, 105]
+        console.log(result); // 10 tane eleman var.
+
+        // 2- pop() arrayin son elemanini diziden siler ve bu elemani dondurur.
+        numbers.pop();
+        console.log(numbers); // (9) [12, 56, 14, 67, 89, 33, 22, 65, 15] (105 silindi)
+
+        result = numbers.pop();
+        console.log(numbers); // (8) [12, 56, 14, 67, 89, 33, 22, 65] (15 silindi)
+        console.log(result); // 15 =>bunu sildim
+
+        // shift() arrayin ilk elemanini siler ve bu elemanin degerini dondurur.
+        numbers.shift();
+        console.log(numbers); (7)[56, 14, 67, 89, 33, 22, 65] //(12 silindi)
+
+        result = numbers.shift();
+        console.log(numbers); // (8) [12, 56, 14, 67, 89, 33, 22, 65] (56 silindi)
+        console.log(result); // 56
+
+
+        // 4- unshift() arrayin ilk indeksine eleman veya elemanlar ekler ve arrayin yeni eleman sayısını döndürür.
+        numbers.unshift(250);
+        console.log(numbers); // (8) [250, 56, 14, 67, 89, 33, 22, 65]
+
+        result = numbers.unshift(255,350);
+        console.log(numbers); // (9) [255, 350, 250, 14, 67, 89, 33, 22, 65]
+        console.log(result); // 9 elemanli 
+
+
+        // 5- sort() arrayi alfabetik siraya gore siralar. dizinin kendisini dondurur
+        numbers.sort();
+        console.log(numbers); // (9) [14, 22, 250, 255, 33, 350, 65, 67, 89] // sayi degerine gore siralamiyor!
+
+        result = numbers.sort((x,y) => x-y); //buyukten kucuge siralayabilmesi icin gerekli fonksiyon
+        console.log(numbers); //(9) [14, 22, 33, 65, 67, 89, 250, 255, 350]
+        console.log(result); // 9) [14, 22, 33, 65, 67, 89, 250, 255, 350]
+
+        colors.sort();
+        console.log(colors); //(4) ['Black', 'Green', 'White', 'blue']
+
+
+        // 6- reverse() array'i ters siralar. array'i dondurur.
+        numbers.reverse();
+        console.log(numbers); //(9) [350, 255, 250, 89, 67, 65, 33, 22, 14] ( en son halinde biz buyukten kucuge siraladigimiz icin onun tam tersini siraliyor simdi)
+
+        result = colors.reverse();
+        console.log(colors); //(4) ['blue', 'White', 'Green', 'Black']
+        console.log(result); // ['blue', 'White', 'Green', 'Black']
+
+
+        //7- splice() farkli sekillerde kullanilabilir.
+        //a - Belirtilen indexten sonrarini siler
+
+        result = numbers.splice(6); //indexi 6 olan elemandan itibaren sil
+        console.log(numbers); // (6) [350, 255, 250, 89, 67, 65]
+        console.log(result); // [33, 22, 14]
+        console.log(result); // (3) [33, 22, 14]) ==> sildigi elemanlar
+
+        //b - Belirtilen indexten itibaren belirtilen sayida eleman siler
+
+        numbers.splice(3,1);
+        console.log(numbers); // (5) [350, 255, 250, 67, 65] (89'u sildi)
+
+        // c - belirtilen indexten itibaren siler ve eklemeler de yapabilir.\
+        numbers.splice(1,1,30,49); // 3. parametreden itibaren yazdiklarimiz eklemelerdir.
+        console.log(numbers); // (6) [350, 30, 49, 250, 67, 65]
+
+        numbers.splice(3,0,42); // 3. index'e git, sifir eleman sil, 42 elemanini ekle
+        console.log(numbers); // (7) [350, 30, 49, 42, 250, 67, 65]
+
+
+
+
+    </script>
+</body>
+</html>

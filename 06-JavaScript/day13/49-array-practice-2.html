@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Practice</title>
+</head>
+<body>
+    <h2>Array Practice</h2>
+
+    <script>
+        // Bir dizi elemanlarinin degerini %20 artiran fonksiyonu yaziniz.
+
+        const prices = [123, 5666, 126, 67];
+        const prices2 = [100,  5000, 120, 60];
+
+        const setPrices = function(arr, rate){
+
+            if(!Array.isArray(arr)|| arr.length == 0){
+                return;
+            }
+
+            for(let i=0; i<arr.length; i++){
+
+                arr[i] += arr[i] * rate/100;
+            }
+            return arr;
+        }
+
+
+        console.log(setPrices(prices, 50)); // [184.5, 8499, 189, 100.5]
+        console.log(setPrices(prices2, 30)); // [130, 6500, 156, 78]
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array of Objects</title>
+</head>
+<body>
+    <h2>Array of Objects</h2>
+
+    <script>
+
+        let books = [
+            {
+                id:1,
+                title: "Anna Karenina",
+                author: "Lev Tolstoy",
+                first_published_year: 1876,
+                genre: "Fiction",
+                pages: 792
+            },
+            {
+                id:2,
+                title: "Eylul",
+                author: "Mehmet Rauf",
+                first_published_year: 1901,
+                genre: "Fiction",
+                pages: 300
+            },
+            {
+                id:2,
+                title: "Araba Sevdasi",
+                author: "Recaizade Mahmud Ekrem",
+                first_published_year: 1897,
+                genre: "Fiction",
+                pages: 200
+            },
+
+        ]
+        console.log(books);
+
+        for (let i=0; i<books.length; i++){
+            console.log(books[i].title + "=>" + books[i].author);
+        }
+    </script>
+    
+</body>
+</html>
