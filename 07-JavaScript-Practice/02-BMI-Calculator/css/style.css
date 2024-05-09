@@ -1,0 +1,116 @@
+.title{
+    text-align: center;
+    margin-top: 30px;
+}
+.display{
+    height: 5px;
+    background-color: gray;
+    margin: 80px 30px;
+    display: flex;
+    position: relative;
+}
+.display .stage1{
+    background-image: linear-gradient(90deg, gray, yellowgreen);
+    flex-basis: 37%;
+}
+.display .stage2{
+    background-color: yellowgreen;
+    flex-basis: 13%;
+}
+.display .stage3{
+    background-image: linear-gradient(90deg, yellowgreen, pink);
+    flex-basis: 10%;
+}
+.display .stage4{
+    background-image: linear-gradient(90deg, pink, red);
+    flex-basis: 40%;
+}
+.display > div[class^="stage"]{
+    position: relative;
+}
+.display > div[class^="stage"]::before{
+    position: absolute;
+    top:0;
+    width: 100%;
+    padding: 0 5px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-left: 1px solid gray;
+    transform: translateY(-100%) ;
+    -webkit-transform: translateY(-100%) ;
+    -moz-transform: translateY(-100%) ;
+    -ms-transform: translateY(-100%) ;
+    -o-transform: translateY(-100%) ;
+}
+.display .stage1::before{
+    content: "Thin";
+}
+.display .stage2::before{
+    content: "Ideal";
+}
+.display .stage3::before{
+    content: "Overweight";
+}
+.display .stage4::before{
+    content: "Obese";
+    border-right: 1px solid gray;
+}
+.indicator{
+    position: absolute;
+    left: 0;
+    top:10px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+.indicator label{
+    position: absolute;
+    left:20px;
+    padding:3px;
+    font-size: 0.8rem;
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.frmBmi{
+    margin:30px;
+    display: flex;
+    gap:30px;
+    flex-wrap: wrap;
+}
+.frmBmi > * {
+    flex: 1 1 300px; 
+}
+.frmBmi span{
+    background: none;
+    border: none;
+}
+.frmBmi input{
+    border: none;
+}
+.frmBmi .input-group{
+    border: 1px solid rgb(181, 180, 180);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.invalid{
+    border-color: red !important;
+}
+/*
+    BMI degeri::
+    0-18 arasinda ise Zayif   37%
+    19-25 arasinda ise Normal  13%
+    26-30 arasinda ise Fazla kilolu  10%
+    31-50 arasinda ise Obez  40%
+*/

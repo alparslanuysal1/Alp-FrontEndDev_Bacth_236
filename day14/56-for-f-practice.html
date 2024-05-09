@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for of practice</title>
+</head>
+<body>
+    <h2>>for of practice</h2>
+
+
+    <script>
+        let flowers = ["Rose", "Tulip", "Lily", "Daisy", "Violet"];
+
+        console.log(flowers.join(" ")); // Rose Tulip Lily Daisy Violet
+
+        const flowersFunction = (arr) =>{
+            let str = "";
+
+                for(let element of arr){
+                    str += element + " ";
+                }
+                return str;
+        }
+
+        let flowersString = flowersFunction(flowers);
+        console.log(flowersString)
+
+    </script>
+</body>
+</html>

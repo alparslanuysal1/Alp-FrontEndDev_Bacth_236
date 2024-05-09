@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for-in-for-of</title>
+</head>
+<body>
+    
+<h2>for in - for of</h2>
+
+<!--
+        for in loop, objectlerde daha çok işe yarar..
+        for of loop, arraylerde daha çok işe yarar..
+
+        
+        for in, indeks değerini atar.. Bu nedenle console.log(fruits[i]); diye yazdırırız.. (For in loop objectte sırasıyla propertyleri(object'in özellikleri) atar.. For in loop arrayde sırasıyla index değerlerini atar..)
+        for of, elemanın kendi değerini atar.. Bu nedenle console.log(fruit); diye yazdırırız..
+     -->
+
+
+    <script>
+        var fruits = ["apple", "pear", "banana", "cherry"];
+        var person = {
+            firstName: "Ayse",
+            lastName: "Celik",
+            age: 25
+        }
+
+        for(let i=0; i<fruits.length; i++){
+            console.log(fruits[i]);
+
+        }
+
+        console.log("//////////////////");
+
+        //for in loop
+        for(let i in fruits){ // i, array'de index degerlerini alir.
+            console.log(i);
+        }
+
+        console.log("/////////////////");
+        
+        for(let k in person){ //k, object'te sirasiyla propertyleri alir.
+            console.log(k + ": " + person[k]); // firstName: Ayse
+                                                // lastName: Celik
+                                                // age: 25
+        }
+
+        console.log("/////////////////");
+        // for of loop
+
+        for( let f of fruits){ // f degiskeni sirasiyla array elemanlarini alir.
+            console.log(f);
+        }
+
+        for( let f of person){ //Object'lerde  person is not iterable hatasi verir
+            console.log(f);
+        }
+
+    </script>
+</body>
+</html>

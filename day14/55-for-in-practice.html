@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>for in practice</h2>
+
+    <script>
+        // ÖRNEK: İki ayrı dizideki eşleşen indis elemanları birleştirerek ayrı bir diziye saklayan uygulamayı FOR IN ile yazınız.
+
+        const firstNames = ["Ayse", "Ali", "Emily", "John", "Amanda", "Lioel"];
+        const lastNames = ["Celik", "Can", "Clark", "Tech", "Marin", "Messi"];
+
+        const createFullNames = (names, surnames)=>{
+
+            let fullNames = [];
+            //Iki dizinin de indexleri ayni oldugu icin ikisinden birini yazariz
+            for( let i in names){
+                fullNames.push(names[i] + " " + surnames[i]);
+            }
+            return fullNames;
+        }
+
+        let fNames = createFullNames(firstNames, lastNames);
+
+        console.log(fNames);
+        //['Ayse Celik', 'Ali Can', 'Emily Clark', 'John Tech', 'Amanda Marin', 'Lioel Messi']
+    </script>
+</body>
+</html>

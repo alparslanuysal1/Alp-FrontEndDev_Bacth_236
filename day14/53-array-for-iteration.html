@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Practice</title>
+</head>
+<body>
+    <h2>Array Practice</h2>
+    <script>
+
+        /* Bir dizideki pozitif
+            ve negatif sayıların toplamını
+            hesaplayıp, bu toplamların farkını bulan uygulamayı
+            for döngüsü ile yazınız.
+            hesapla adında bir fonksiyonda hesaplamayı yapınız. */
+        let numbers = [-5, 15, 22, -4, 45, 78, -25];
+
+        const calculate =(arr)=>{
+
+            let pozitiveTotal = 0;
+            let negativeTotal = 0;
+
+            for(let i=0; i<arr.length; i++){
+
+                if(arr[i] > 0){
+                    pozitiveTotal += arr[i];
+                }
+                else{
+                    negativeTotal += arr[i];
+                }
+
+                return pozitiveTotal - negativeTotal;
+
+            }
+
+        }
+
+        let total = calculate(numbers);
+        console.log(total);
+    </script>
+</body>
+</html>
