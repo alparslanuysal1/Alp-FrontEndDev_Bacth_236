@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map practice</title>
+</head>
+<body>
+    <h2>map practice</h2>
+
+
+    <script>
+        // Bir dizideki tum isimleri BUYUK harfe donusturen uygulamayi yaziniz.
+
+
+        let cities = ["istanbul", "Ankara", "izmir", "samsun", "van"];
+
+        let upperCaseCities = cities.map((city)=>city.toUpperCase());
+
+        console.log(upperCaseCities); // ['ISTANBUL', 'ANKARA', 'IZMIR', 'SAMSUN', 'VAN']
+
+    //////////////////////////////////////////////////////////////////
+
+    //TL fiyatlar dizisindeki fiyatlarin Euro ve dolar karsiliklarini hesaplayarak yeni bir diziye kaydediniz.
+
+    const euro = 34.5;
+    const dolar = 32.35;
+    const tlPrices = [ 1000, 1500, 1000, 500, 800];
+
+    let euroPrices = tlPrices.map((price)=>(price/euro).toFixed(1));
+    console.log(euroPrices); // ['29.0', '43.5', '29.0', '14.5', '23.2']
+
+    let dolarPrices = tlPrices.map((price)=>(price/dolar).toFixed(1));
+    console.log(dolarPrices); // ['30.9', '46.4', '30.9', '15.5', '24.7']
+
+
+    
+
+    </script>
+
+</body>
+</html>

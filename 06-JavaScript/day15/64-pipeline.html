@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipeline</title>
+</head>
+<body>
+    <h2>pipeline - Method Chaining</h2>
+pipeline: İterasyon methodlarının art arda uygulanamsına denir. Örneğin; filtrelicez(filter), çevirip/döndürüp/değiştirip(map), consola yazdırıcaz(for each) diyelim <br><br><br>
+    for each, herhangi bir şey return etmez. Sadece sırasıyla döndürüp ,consola yazdırır..
+    <script>
+
+        
+        // Koordinatlar dizisindeki negatif koordinatlari secerek bunlari pozitife cevirip sonra yeni arrayi konsola yazdir.
+
+        let coordinates = [-100, 150, -32, 43, -20];
+
+        let x = coordinates
+        .filter((element) => element < 0) // [-100, -32, -20] dondurur
+        .map((item) => item * -1) // [100, 32, 20] dondurur
+        .forEach((e) => console.log(e)); // teker teker
+
+        console.log(x); //undefined degeriu gelir. cunku forEach bir sey return etmez. 
+
+        console
+    </script>
+    
+</body>
+</html>

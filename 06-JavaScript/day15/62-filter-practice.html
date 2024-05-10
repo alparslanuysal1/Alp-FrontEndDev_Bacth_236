@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter - Practice</title>
+</head>
+<body>
+    <h2>filter - Practice</h2>
+
+
+    <script>
+        // Koordinatlar dizisindeki negatif koordinatları alıp yeni bir dizide saklayan uygulamayı filter() ile yapınız.
+
+        let coordinates = [-100, 150, -32, 43, -20];
+
+        let negativeCoordinates = coordinates.filter((item)=>item < 0);
+
+
+        console.log(negativeCoordinates);    
+
+        //////////////////////////////////////
+
+        // people disizindeki kisileriden adi belirtilen harf ile baslayanlari
+
+        let people = ["Ayse", "Ali", "can", "canan", "john", "Emily", "Messi", "Ronaldo"];
+
+        function filteredPeople(letter) {
+
+          return people.filter((person)=>person.startsWith(letter)); // sununla baslayan(letter) vs vs
+          
+        }
+
+        console.log(filteredPeople("A"));
+    
+    </script>
+</body>
+</html>

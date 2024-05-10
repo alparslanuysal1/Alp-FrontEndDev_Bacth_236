@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter practice2</title>
+</head>
+<body>
+    <h2>filter - practice2</h2>
+
+    <script>
+        // products dizisindeki urunler icinden fiyati 1000 TL'den az olanlardan olusan bir array olusturun.
+
+        let products = [
+            { id: 1, name: "laptop", price: 3000 },
+	        { id: 2, name: "mobile", price: 1000},
+	        { id: 3, name: "watch", price: 500 },
+	        { id: 4, name: "tablet", price: 2000 },
+	        { id: 5, name: "charger", price: 500 },
+	        { id: 5, name: "mouse", price: 100 },
+        ];
+
+
+
+        const productsUnder1000 = products.filter((product) => product.price < 1000);
+        const productsOver1000 = products.filter((product) => product.price >= 1000);
+
+        console.log(productsUnder1000);
+        console.log(productsOver1000);
+
+    </script>
+    
+</body>
+</html>

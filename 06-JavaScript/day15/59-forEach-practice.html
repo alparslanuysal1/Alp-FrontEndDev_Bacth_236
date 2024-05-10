@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach Practice</title>
+</head>
+<body>
+    <h2>forEach Practice</h2>
+    
+    <script>
+        // Belirtilen dizinin her bir elemaninin 5 kstini alarak ayri bir dizide saklayan uygulamayi forEach() methodu ile yapiniz.
+
+        let numbers = [-5, 25, -13, 7];
+
+        let newNumbers = [];
+        numbers.forEach((num)=>{ // =  numbers.forEach((num)=>newNumbers.push(num*5));
+            newNumbers.push(num*5);
+        });
+
+        console.log(newNumbers); //[-25, 125, -65, 35]
+
+         //////////////////////////////
+
+         let newNumbers2 = numbers.map((num)=>{ //numbers.map((num)=>num*5);  =>tek satirda yazilirsa return u da kendi icinde barindiriyor.
+            return num*5;
+        })
+
+        console.log(newNumbers); // [-25, 125, -65, 35]
+
+    </script>
+
+    
+</body>
+</html>
