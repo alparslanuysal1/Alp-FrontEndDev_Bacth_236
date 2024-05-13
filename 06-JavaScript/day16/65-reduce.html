@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reduce</title>
+</head>
+<body>
+    <h2>reduce() method</h2>
+
+    <script>
+
+        // reduce() ile toplamını alacağız.
+
+        let coordinates = [-100, 150, -32, 43, -20];
+
+        // forEach() ile
+        let sum = 0;
+
+        coordinates.forEach((num) => sum+=num);
+        console.log(sum); // 41
+
+        // reduce() ile
+        let totalCoordinates = coordinates.reduce((sum, num) => {
+            return sum + num;
+        }, 0);
+        console.log(totalCoordinates); // 41
+
+        /////////////////////////
+
+        let numbers = [3, 15, 45, 125];
+
+        let reducedNumbers = numbers.reduce((multiplication, num,) => multiplication*num , 1 ); // 1 ilk deger. carpma da 1 toplamada 0 olarak fonksiyonun en sonuna yazlir.!!! parametredeki ilk degere atanir bu. eklemeyince ilk elemani atar!!
+        console.log(reducedNumbers); //253125
+
+        //////////////////////////////////////////////////
+
+        let decimals = [7.5, 1.2, 3.4, 4.8];
+
+        // Eğer ilk değer verirsek total o ilk değeri alır.
+        // Fakat ilk değeri tanımlamazsak total array'in ilk elemanını kendisine ilk değer olarak alır.
+
+        let sum2 = decimals.reduce((total, num) => total + Math.round(num));
+        console.log(sum2); // 16.5
+
+        let sum3 = decimals.reduce((total, num) => total + Math.round(num), 0);
+        console.log(sum3); // 17 
+
+    </script>
+</body>
+</html>

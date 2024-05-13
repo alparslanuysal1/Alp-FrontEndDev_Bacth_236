@@ -29,7 +29,49 @@ btnGenerate.addEventListener("click", () => {
     const password = generatePassword(passwordParams);
     lblPassword.textContent = password;
     // Strength olustur
+    const strengthPoint = getStrengthPoint(passwordParams);
+    const strengthText = getStrengthText(strengthPoint);
+    lblStrength.innerHTML = strengthText;
 });
+rangeCharLength.addEventListener("change", (e) => {
+    lblCharLength.textContent = e.target.value;
+});
+btnCopy.addEventListener("click", () => {
+    copyToClipboard(lblPassword.textContent);
+});
+const copyToClipboard = async (text) => {
+    // BROWSER WEB API
+    try {
+        await navigator.clipboard.writeText(text);
+    } catch (err) {
+        console.log(err);
+    }
+};
+const getStrengthText = (point) => {
+    let strengthText = "";
+    let strengthClass = "weak";
+    // round, ceil, floor
+    for (let i = 0; i < Math.round(point / 10); i++) {
+        strengthText += "&#9929;";
+    }
+    if (point > 70) {
+        // strong
+        strengthClass = "strong";
+    } else if (point > 30) {
+        // normal
+        strengthClass = "normal";
+    }
+    return `<span class="${strengthClass}">${strengthText}</span>`;
+};
+const getStrengthPoint = (params) => {
+    const point =
+        (Number(params.hasUpperCase) +
+            Number(params.hasLowerCase) +
+            Number(params.hasNumber) +
+            Number(params.hasSymbol) * 2) *
+        params.passwordLength;
+    return point;
+};
 const generatePassword = (params) => {
     const upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWYZ";
     const lowerCaseLetters = "abcdefghijklmnopqrstuvwyz";
@@ -60,16 +102,17 @@ const generatePassword = (params) => {
     }
     // Ayni siralamada olusan sifreyi karistiriyor
     password = randomSort(password);
-    return password
+    return password;
 };
 const randomSort = (str) => {
     const rndStr = str
         .split("") // diziye cevirir, sort kullanmak icin
         .sort((a, b) => Math.random() - 0.5) // rasgele karisitirir
         .join(""); // tekrar string e cevirir
-        return rndStr;
+    return rndStr;
 };
 const getRandomChar = (chars) => {
+    //"ABCDEFGHIJKLMNOPQRSTUVWYZ"
     // Math.random() *  (max-min+1) + min   //0-27
     const randomIndex = Math.floor(Math.random() * chars.length);
     const char = chars.charAt(randomIndex);

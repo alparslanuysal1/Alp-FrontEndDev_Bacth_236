@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>every - some</title>
+</head>
+<body>
+    <h2>every - some</h2>
+
+
+    <script>
+
+        let prices = [500, 100, 50, 2000, 35000, 15000];
+
+        let x = prices.every((price) => price > 0); //and mantigiyla calisir.
+        console.log(x); // true
+
+        let y = prices.some((prices) => prices < 0); //or gibi calisir. bir tanesi dahi sifirin altinda olursa false
+        console.log(y); //false
+    </script>
+</body>
+</html>

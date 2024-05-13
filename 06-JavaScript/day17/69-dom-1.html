@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1 id="welcomeText">Welcome to my web app</h1>
+    <article></article>
+    <p class="contact">
+      Lorem ipsum dolor sit amet <span>consectetur</span>, adipisicing elit. Quod, officia
+      voluptatibus. Natus officiis sed error iusto, inventore corrupti voluptate
+      eaque a repudiandae, <span>soluta</span> delectus voluptatum dignissimos harum at.
+      Tempora, optio?
+    </p>
+    <script>
+        const welcomeText = document.getElementById("welcomeText");
+        welcomeText.innerHTML += ".";
+
+        // getElements ... methodlari daima dizi doner
+        const contactSpans = document.getElementsByTagName("span"); // sayfadaki tum ayni taglari getirir
+        console.log(contactSpans); 
+        contactSpans[0].textContent = "Hello";
+
+        const contacts = document.getElementsByClassName("contact");
+        console.log(contacts);
+
+
+        const headers = document.getElementsByClassName("header"); // bos da olsa dizi dondurur
+        console.log(headers);
+
+    </script>
+</body>
+</html>
