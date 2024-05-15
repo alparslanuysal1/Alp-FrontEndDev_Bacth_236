@@ -1,0 +1,11 @@
+
+.search-bar ul{
+    display: none;
+    list-style-type: none;
+    margin: 0;
+    margin-top: 5px;
+    padding: 20px;
+    line-height: 30px;
+    border: 1px solid rgb(248, 230, 230);
+    border-radius: 5px;
+}

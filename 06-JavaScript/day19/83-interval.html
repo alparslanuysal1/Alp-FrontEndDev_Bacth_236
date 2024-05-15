@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interval</title>
+</head>
+<body>
+    <button id="btnStart">Start</button>
+    <button id="btnStop">Stop</button>
+    <ul id="lstPrices"></ul>
+    <script>
+        const btnStart = document.getElementById("btnStart")
+        const btnStop = document.getElementById("btnStop")
+        const lstPrices = document.getElementById("lstPrices")
+        let timer = null;
+        const getRandomPrice = () => {
+            const price = Math.floor(Math.random() * 4000 + 1000);
+            return price;
+        }
+        const setPrices = () => {
+            if(timer) return;
+            timer = setInterval(() => {
+                const li = document.createElement("li");
+                li.innerText = getRandomPrice();
+                lstPrices.appendChild(li);
+            }, 2000)
+        }
+        btnStart.addEventListener("click", () => {
+            setPrices();
+        })
+        btnStop.addEventListener("click", () => {
+            clearInterval(timer);
+            timer = null;
+        })
+    </script>
+</body>
+</html>

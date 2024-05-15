@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reference Type</title>
+</head>
+<body>
+    
+    <script>
+        // VALUE TYPE
+        let person1Name = "Ali";
+        let person2Name = person1Name;
+        console.log(person1Name, person2Name);
+        person2Name = "Veli"
+        console.log(person1Name, person2Name);
+
+        
+        // REFERENCE TYPE
+        let person1 = { name: "Ali", age: 34}
+        let person2 = person1;
+        console.log(person1, person2)
+        person2.name = "Veli"
+        console.log(person1, person2);
+    </script>
+</body>
+</html>
