@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest-2</title>
+</head>
+<body>
+    
+
+    <script>
+
+       const getAverage = (firstName, LastName, ...scores) => { // rest en sonra olur ve bir fonksiyonda bir tane rest olur
+            const totalScores = scores.reduce((t, x) => t+x, 0);
+            const average = (totalScores / scores.length).toFixed(2);
+            return `${firstName} ${LastName}'s average is ${average}`;
+       }
+
+       console.log(getAverage("John","Doe", 12,67,44,78,90,44));
+       console.log(getAverage("Susan","Doe", 12,52,70,78,90,));
+
+
+    </script>
+</body>
+</html>

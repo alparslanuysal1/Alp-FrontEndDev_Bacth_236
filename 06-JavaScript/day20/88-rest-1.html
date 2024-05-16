@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest</title>
+</head>
+<body>
+    
+
+    <script>
+
+        const sum1 = (a,b) =>{
+            return a+b;
+        }
+
+        console.log(sum1(234,56));
+
+        const sum2 = (...nums) =>{ // ... koyarak diziden kac tane oge gelirse al diyoruz
+            const total = nums.reduce( (t, x)=> t + x, 0 ) // reduce butun elemanlara bir islem uygulayip tek bir sey dondurur. mesela hepsini toplar. string veri dondurur.
+
+            // 0 ise t nin ilk degeridir. mesela carpma yapilacaksa oraya 1 yazilir. etkisiz eleman yani 
+            // t gecici toplami saklar
+            // x dizinin siradaki elemani
+            // t ile x toplanir ilk parametre olan t ye atanir.
+        }
+        
+        console.log(sum2(12,54,78,5,898));
+
+
+    </script>
+</body>
+</html>

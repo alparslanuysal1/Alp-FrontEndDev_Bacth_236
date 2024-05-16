@@ -13,14 +13,15 @@
         const btnStart = document.getElementById("btnStart")
         const btnStop = document.getElementById("btnStop")
         const lstPrices = document.getElementById("lstPrices")
-        let timer = null;
+        let timer = null; // iki farkli fonksiyonda kullanacagimiz icin global verdik
+
         const getRandomPrice = () => {
             const price = Math.floor(Math.random() * 4000 + 1000);
             return price;
         }
         const setPrices = () => {
-            if(timer) return;
-            timer = setInterval(() => {
+            if(timer) return; // timer degiskeni bir degere sahipse return ile basa don. yeniden fonksiyonu calistirma
+            timer = setInterval(() => { //fonksiyon sonucunu timer degiskenine atadik
                 const li = document.createElement("li");
                 li.innerText = getRandomPrice();
                 lstPrices.appendChild(li);
@@ -30,9 +31,11 @@
             setPrices();
         })
         btnStop.addEventListener("click", () => {
-            clearInterval(timer);
-            timer = null;
+            clearInterval(timer); // bu sekilde setInterval'i durduruyoruz.
+            timer = null; //hafizadaki timer icine attigimizobjeyi sifirlariz
         })
+
+        /* setInterval veya setTimeout kullanacaksak bunlari mutlaka bir degiskene atamaliyiz */
     </script>
 </body>
 </html>

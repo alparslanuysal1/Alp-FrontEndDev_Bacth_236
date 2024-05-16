@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spread-2</title>
+</head>
+<body>
+
+
+
+
+    <script>
+        let cities = ["London", "Berlin", "Tokyo", "Istanbul"];
+        cities = ["Zurih",cities, "Lisbon"]; // ['Zurih', Array(4), 'Lisbon']
+
+        console.log(cities);
+
+
+        let cities2 = ["London", "Berlin", "Tokyo", "Istanbul"];
+        cities = ["Zurih",...cities2, "Lisbon"]; // spread kullanimi ['Zurih', 'London', 'Berlin', 'Tokyo', 'Istanbul', 'Lisbon']
+
+        console.log(cities);
+
+
+        ///////////////////////////////
+
+        let countries1 = ["Germany", "Denmark", "Italy", "France"];
+        let countries2 = ["Mexico", "Singapur", "Japan"];
+
+        let countries = [...countries1, "Belgium", ...countries2];
+        console.log(countries); // ['Germany', 'Denmark', 'Italy', 'France', 'Belgium', 'Mexico', 'Singapur', 'Japan']
+
+
+        ///////////////////////////////
+
+        //Bir dizi icindeki tekrar eden elemanlari silip unique bir dizi nasil olusturulur?
+
+        let colors = ["red", "green", "yellow", "purple", "orange", "yellow"];
+        let uniqueColors = new Set(colors); // Set bir obje! {'red', 'green', 'yellow', 'purple', 'orange'}
+        console.log(uniqueColors);
+
+        // dizi yapiyoruz spread ile
+        let uniqueColors2 = [...new Set(colors)]; // ['red', 'green', 'yellow', 'purple', 'orange']
+        console.log(uniqueColors2);
+
+
+    </script>
+    
+</body>
+</html>

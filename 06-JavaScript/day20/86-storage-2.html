@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage</title>
+</head>
+<body>
+    
+    <div id="counter">Uygulamamiza <span>Ilk</span> defa giris yaptiniz</div>
+
+    <script>
+
+        ( () => {
+            let count = localStorage.getItem("count");
+            // if(!count) count=1;
+            // count = count ?? 1 ---eger count undefined veya null ise count'i 1 yap
+            count ??= 1;
+
+            if(count>1){
+                document.querySelector("#counter span").textContent = `${count} defa girdiniz`;
+            }
+
+            
+            localStorage.setItem("count", ++count);
+
+        }) (); // isimsiz fonksiyonu parantez icine aldim. sonunada bos parantez olusturdum. kendi kendini cagiran fonksiyon
+
+    </script>
+</body>
+</html>
