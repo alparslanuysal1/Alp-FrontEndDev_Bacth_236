@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYNC vs Async</title>
+</head>
+<body>
+    
+
+    <script>
+       
+       const getData = () => {
+        setTimeout( () => {
+            console.log("Hello 2")
+        }, 300);
+
+        console.log("Hello 4")
+       }
+
+            console.log("Hello 1")
+            getData();
+            console.log("Hello 3")
+       
+
+    </script>
+    
+</body>
+</html>

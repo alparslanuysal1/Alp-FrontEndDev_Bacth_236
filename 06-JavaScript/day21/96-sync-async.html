@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYNC vs Async</title>
+</head>
+<body>
+    
+
+    <script>
+        for(let i=0; i < 5; i++){
+            console.log(`Hello ${i}`)
+        };
+
+    console.log("------------");
+
+
+        setTimeout(()=>{ // setTimeout fonksiyonu sifir saniye gecikmeyle dahi calissa asenkron oldugu icin senkron fonksiyonlarin hepsi bittikten sonra calisir.
+            console.log("Hello Aync")
+        }, 0);
+
+    console.log("------------");
+
+
+        for(let i=0; i < 5; i++){
+            console.log(`Hei ${i}`)
+        };
+
+
+    </script>
+    
+</body>
+</html>
