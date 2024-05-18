@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callback-1</title>
+</head>
+<body>
+
+    <div id="lstData">Az Sonra Buraya DATA gelecek</div>
+
+    <input type="text" id="txtName">
+
+    
+
+    <script>
+
+        
+       
+
+       
+       const getData = (cb) => { //callback=cb
+        setTimeout( () => {
+            // ...... API dan data cekiliyor mesela
+           const data = "John Doe";
+          
+            cb(data); // gecikmeli fonksiyon oldugu icin returnla geri cagiramiyoruz, callback = cb fonksiyonu tanimliyoruz ve baska yerde fonksiyon bu fonksiyonu cagiriyoruz. fonksiyon icinde fonksiyon cagiriyoruz.
+        }, 2000);
+
+        console.log("Hello 4");
+        //return "Hello x" //
+       }
+
+            console.log("Hello 1");
+
+            getData( (data)=>{
+                document.getElementById("lstData").textContent = data;
+            });
+
+            getData( (data)=>{
+                document.getElementById("txtName").value = data;
+            });
+
+
+            console.log("Hello 3")
+       
+
+    </script>
+    
+</body>
+</html>

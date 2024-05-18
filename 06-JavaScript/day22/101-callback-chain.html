@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback-4</title>
+</head>
+<body>
+
+
+    <script>
+        
+        
+        const siparisVer = (cb) => {
+            console.log("Siparis verildi");
+            setTimeout(() => {
+                console.log("Siparis hazir")
+                cb()
+            }, 3000)
+        }
+        const yemekYe = (cb) => {
+            console.log("Yemege basladik");
+            setTimeout(() => {
+                console.log("Yemek bitti. Afiyet olsun.")
+                cb()
+            }, 2000)
+        }
+        const filmIzle = () => {
+            console.log("Film basladi");
+            setTimeout(() => {
+                console.log("Film bitti")
+            }, 2000)
+        }
+        const patlakMisirYe = () => {
+            console.log("Patlak misir yemege basladik");
+            setTimeout(() => {
+                console.log("Patlak misir yemegi bitirdik")
+            }, 1500)
+        }
+
+// callback chain || callback hell
+        siparisVer( ()=>{
+            yemekYe(()=>{
+                filmIzle();
+                patlakMisirYe();
+            });
+            
+        });
+        
+
+    </script>
+
+</body>
+</html>

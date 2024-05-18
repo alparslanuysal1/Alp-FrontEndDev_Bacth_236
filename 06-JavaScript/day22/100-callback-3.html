@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Callback-3</title>
+</head>
+<body>
+    
+    <div>
+       <button id="btnDistance">Get Distance</button> <span id="lblDistance"></span>
+    </div>
+    <div>
+        <button id="btnRandom">Get Random Number</button> <span id="lblRandom"></span>
+    </div>
+
+
+    <script>
+
+        const btnDistance = document.getElementById("btnDistance");
+        const btnRandom = document.getElementById("btnRandom");
+        const lblDistance = document.getElementById("lblDistance");
+        const lblRandom = document.getElementById("lblRandom");
+
+        const getDistanceFromGoogle = (coord1, coord2, cb) => {
+            setTimeout(()=>{
+                // Burada google sunucularina baglandigimizi varsayalim.
+                // Google aldigi iki koordinat arasindaki mesafeyi hesaplayip bize geri veriyor.
+
+                const distance = Math.floor(Math.random()*(coord1 - coord2) + coord2); // cb yi cagirirken bu satirda yapilan islemi atadigim distance degiskenini yaziyorum
+
+                cb(distance)
+
+            }, 3000)
+        }
+
+
+        btnDistance.addEventListener("click", ()=>{
+            getDistanceFromGoogle(10000, 20000, (distance)=>{ // cb burada ucuncu parametre olarak cagirildi
+                lblDistance.textContent = `${distance} km`
+            });
+
+        });
+
+
+
+        btnRandom.addEventListener("click", ()=>{
+            lblRandom.textContent = Math.floor(Math.random() * 10000)
+        })
+
+    </script>
+</body>
+</html>
