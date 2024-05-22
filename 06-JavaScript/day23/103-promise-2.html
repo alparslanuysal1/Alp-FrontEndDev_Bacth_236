@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    <button id="btnDel">Delete</button>
+    <script>
+        // CALLBACK ILE COZUM
+        /*  const confirmAsync = (msg, cb) => { 
+             setTimeout(()=>{
+                 const res = confirm(msg);
+                 cb(res)
+             },0)
+         } */
+        const confirmAsync = (msg) => new Promise((resolve) => {
+            setTimeout(() => {
+                const res = confirm(msg);
+                resolve(res)
+            }, 0)
+        })
+        document.getElementById("btnDel").addEventListener("click", () => {
+            // CALLBACK ILE COZUM
+            /* confirmAsync("Are you sure to delete", (res)=>{
+                if(res){
+                    console.log("Deleting...")
+                }
+                else{
+                    console.log("Canceled")
+                }
+            }) */
+            confirmAsync("Are you sure to delete").then((res) => {
+                if (res) {
+                    console.log("Deleting...")
+                }
+                else {
+                    console.log("Canceled")
+                }
+            })
+            console.log("Hello")
+        })
+    </script>
+</body>
+</html>

@@ -36,8 +36,8 @@
 
 
         btnDistance.addEventListener("click", ()=>{
-            getDistanceFromGoogle(10000, 20000, (distance)=>{ // cb burada ucuncu parametre olarak cagirildi
-                lblDistance.textContent = `${distance} km`
+            getDistanceFromGoogle(10000, 20000, (d)=>{ // cb burada ucuncu parametre olarak cagirildi. d'nin karsiligi sadece alt satirda.
+                lblDistance.textContent = `${d} km`
             });
 
         });

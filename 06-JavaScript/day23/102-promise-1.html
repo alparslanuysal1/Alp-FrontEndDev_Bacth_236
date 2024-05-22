@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise-1</title>
+</head>
+<body>
+    <h1 id="lblTitle">Hello</h1>
+    <button id="btnGetUser">Get User</button>
+    <script>
+        const getUser = () => new Promise((resolve, reject) => {
+            /* Bu bolumde asenkron calisan cesitli kodlar oldugunu farzedelim. Ornegin harici bir servise baglanti kodlari olabilir. Buradan bir data geri geliyor olabilir*/
+            setTimeout(() => {
+                const ok = false;
+                const data = { firstName: "John", lastName: "Doe" }
+                if (ok) {
+                    resolve(data)
+                }
+                else {
+                    reject("Invalid paramaters")
+                }
+            }, 3000)
+        })
+        document.getElementById("btnGetUser").addEventListener("click", () => {
+            const lblTitle = document.getElementById("lblTitle");
+            getUser().then((data) => {
+                lblTitle.textContent = `${data.firstName} ${data.lastName}`
+            }).catch((err) => alert(err));
+        })
+    </script>
+</body>
+</html>
