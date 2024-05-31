@@ -32,7 +32,7 @@ function getBMI() {
   
 
 	// indicator i set et
-    const leftPosition = bmi > 50 ? 100 : bmi * 2;
+    const leftPosition = bmi > 50 ? 100 : bmi * 2;  // bmi 50'den buyuk ise 100'e sabitle
     indicator.style.left = `${leftPosition}%`;
     indicatorLabel.textContent = bmi.toFixed(0);
 

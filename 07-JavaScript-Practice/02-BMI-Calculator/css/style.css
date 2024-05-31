@@ -2,6 +2,8 @@
     text-align: center;
     margin-top: 30px;
 }
+
+
 .display{
     height: 5px;
     background-color: gray;
@@ -9,26 +11,33 @@
     display: flex;
     position: relative;
 }
+
+
 .display .stage1{
     background-image: linear-gradient(90deg, gray, yellowgreen);
     flex-basis: 37%;
 }
+
 .display .stage2{
     background-color: yellowgreen;
     flex-basis: 13%;
 }
+
 .display .stage3{
     background-image: linear-gradient(90deg, yellowgreen, pink);
     flex-basis: 10%;
 }
+
 .display .stage4{
     background-image: linear-gradient(90deg, pink, red);
     flex-basis: 40%;
 }
+
 .display > div[class^="stage"]{
     position: relative;
 }
-.display > div[class^="stage"]::before{
+
+.display > div[class^="stage"]::before{ /* classi display olanin div cocuklarindan classi "stage" ile baslayanlardan once  */
     position: absolute;
     top:0;
     width: 100%;
@@ -43,19 +52,24 @@
     -ms-transform: translateY(-100%) ;
     -o-transform: translateY(-100%) ;
 }
+
 .display .stage1::before{
     content: "Thin";
 }
+
 .display .stage2::before{
     content: "Ideal";
 }
+
 .display .stage3::before{
     content: "Overweight";
 }
+
 .display .stage4::before{
     content: "Obese";
     border-right: 1px solid gray;
 }
+
 .indicator{
     position: absolute;
     left: 0;
@@ -65,7 +79,13 @@
     -moz-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
+    transition: left 1s;
+    -webkit-transition: left 1s;
+    -moz-transition: left 1s;
+    -ms-transition: left 1s;
+    -o-transition: left 1s;
 }
+
 .indicator label{
     position: absolute;
     left:20px;
@@ -79,22 +99,29 @@
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
 }
+
+
 .frmBmi{
     margin:30px;
     display: flex;
     gap:30px;
     flex-wrap: wrap;
 }
-.frmBmi > * {
+
+.frmBmi > * { /* icindeki birince derece cocuklari icin > ve * konur. tum soyunu secmek icin sadece * konur  */
     flex: 1 1 300px; 
 }
+
+
 .frmBmi span{
     background: none;
     border: none;
 }
+
 .frmBmi input{
     border: none;
 }
+
 .frmBmi .input-group{
     border: 1px solid rgb(181, 180, 180);
     border-radius: 5px;
@@ -104,9 +131,11 @@
     -o-border-radius: 5px;
 }
 
+
 .invalid{
     border-color: red !important;
 }
+
 /*
     BMI degeri::
     0-18 arasinda ise Zayif   37%
