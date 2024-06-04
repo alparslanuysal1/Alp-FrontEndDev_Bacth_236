@@ -63,11 +63,22 @@ body{
 }
 
 .password-generator .strength h6{
-    margin: 0;
+    margin: 0;  /* butun basliklarda default margin degeri olur. bu sekilde sifirlariz */
 }
 
 .password-generator .settings button{
     margin-top: 20px;
     width: 100%;
     font-weight: 500;
+}
+
+.weak {
+    color: rgb(244, 30, 30)
+}
+
+.normal {
+    color: rgb(240, 244, 30)
+}
+.strong {
+    color: rgb(47, 252, 24)
 }

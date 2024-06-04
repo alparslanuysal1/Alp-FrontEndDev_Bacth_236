@@ -16,7 +16,7 @@ btnGenerate.addEventListener("click", () => {
     const hasNumber = chkNumbers.checked;
     const hasSymbol = chkSymbols.checked;
     const passwordParams = {
-        passwordLength,
+        passwordLength, // passwordLength: passwordLength, (objelerde key ve value ayni ise uzun uzun yazmaya gerek yok)
         hasUpperCase,
         hasLowerCase,
         hasNumber,
@@ -33,16 +33,16 @@ btnGenerate.addEventListener("click", () => {
     const strengthText = getStrengthText(strengthPoint);
     lblStrength.innerHTML = strengthText;
 });
-rangeCharLength.addEventListener("change", (e) => {
+rangeCharLength.addEventListener("change", (e) => { // change oldugunda su islemleri yap diye handler tanimliyorum
     lblCharLength.textContent = e.target.value;
 });
-btnCopy.addEventListener("click", () => {
+btnCopy.addEventListener("click", () => { 
     copyToClipboard(lblPassword.textContent);
 });
-const copyToClipboard = async (text) => {
+const copyToClipboard = async (text) => { 
     // BROWSER WEB API
     try {
-        await navigator.clipboard.writeText(text);
+        await navigator.clipboard.writeText(text); // navigatorun clipboard ina eris ve writeText ile  (Text) ikopyala
     } catch (err) {
         console.log(err);
     }
@@ -51,7 +51,7 @@ const getStrengthText = (point) => {
     let strengthText = "";
     let strengthClass = "weak";
     // round, ceil, floor
-    for (let i = 0; i < Math.round(point / 10); i++) {
+    for (let i = 0; i < Math.round(point / 10); i++) { // bolum ondalikli cikarsa diye Math.round kullandik.
         strengthText += "&#9929;";
     }
     if (point > 70) {
@@ -107,7 +107,7 @@ const generatePassword = (params) => {
 const randomSort = (str) => {
     const rndStr = str
         .split("") // diziye cevirir, sort kullanmak icin
-        .sort((a, b) => Math.random() - 0.5) // rasgele karisitirir
+        .sort((a, b) => Math.random() - 0.5) // Math yazarak rasgele karisitirdik. negatif deger gelirse buyukten kucuge, pozitif deger gelirse kucukten buyuge siralar. 0 gelirse hic karistirmadan oldugu gibi birakir. hicbir sayi yazmazsak sort methodu aski kod tablosuna gore kucukten buyuge dogru siralar
         .join(""); // tekrar string e cevirir
     return rndStr;
 };
@@ -115,7 +115,7 @@ const getRandomChar = (chars) => {
     //"ABCDEFGHIJKLMNOPQRSTUVWYZ"
     // Math.random() *  (max-min+1) + min   //0-27
     const randomIndex = Math.floor(Math.random() * chars.length);
-    const char = chars.charAt(randomIndex);
+    const char = chars.charAt(randomIndex); // charAt boyle bir komut var
     return char;
 };
 const validateInputs = (params) => {
