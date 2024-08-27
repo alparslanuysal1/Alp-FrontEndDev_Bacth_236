@@ -2,10 +2,10 @@ import { students } from "./students.js";
 document
     .querySelector("#tblStudents tbody")
     .addEventListener("click", (e) => {
+        // tbody icinde uzerine tiklanan her elementin click olayinin burada yakalanmasi eventPropogation sayesinde olur. herhangi bir event üzerinde gerçekleşen olayın parentlara dogru yayılmasına denir.
 
-        
-        // tbody icinde uzerine tiklanan her elementin click olayinin burada yakalanmasi eventPropogation sayesinde olur.
-        if(!e.target.classList.contains("btn-del")) return;
+
+        if(!e.target.classList.contains("btn-del")) return; /* contains = iceriyor mu demek */
         const name = e.target.closest("tr").children[1].textContent;
         
         const res = confirm(`${name} isimli kaydi silmek istediginizden emin misiniz?`)
