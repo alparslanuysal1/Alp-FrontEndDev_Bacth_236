@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="https://google.com" id="frmLogin" novalidate>
+        <form action="https://google.com" id="frmLogin" novalidate> <!-- novalidate formdaki type kontrollerini html-5'in yapmasina engel olur -->
             <div class="mb-3">
                 <label for="txtEmail" class="form-label">Email</label>
                 <input type="email" class="form-control" name="email" id="txtEmail" aria-describedby="emailHelpId"
@@ -19,7 +19,7 @@
                 <label for="txtPassword" class="form-label">Password</label>
                 <input type="password" class="form-control" name="password" id="txtPassword" placeholder="">
             </div>
-            <button id="btnLogin" class="btn btn-info" type="submit">Login</button> <!-- submit butonunun gorevi form action'daki adrese formdaki girilen bilgileri gondermektir -->
+            <button id="btnLogin" class="btn btn-info" type="submit">Login</button> <!-- submit butonunun gorevi form action'daki adrese formdaki girilen bilgileri gondermektir  name ile iliskilendirerek gonderir -->
         </form>
     </div>
     <script src="js/script-79.js"></script>
