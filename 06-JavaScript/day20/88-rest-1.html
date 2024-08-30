@@ -16,7 +16,8 @@
 
         console.log(sum1(234,56));
 
-        const sum2 = (...nums) =>{ // ... koyarak diziden kac tane oge gelirse al diyoruz
+        // REST SADECE FONKSIYONLARIN PARAMETRE ALDIGI YERE ... NOKTA KONULURSA CALISIR. DIGER YERLERE ... NOKTA KONULURSA SPREAD OLUR 
+        const sum2 = (...nums) =>{ // ... (rest) koyarak diziden kac tane oge gelirse al diyoruz
             const total = nums.reduce( (t, x)=> t + x, 0 ) // reduce butun elemanlara bir islem uygulayip tek bir sey dondurur. mesela hepsini toplar. string veri dondurur.
 
             // 0 ise t nin ilk degeridir. mesela carpma yapilacaksa oraya 1 yazilir. etkisiz eleman yani 

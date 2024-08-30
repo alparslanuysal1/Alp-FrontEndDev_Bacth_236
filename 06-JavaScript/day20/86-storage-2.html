@@ -14,7 +14,7 @@
         ( () => {
             let count = localStorage.getItem("count");
             // if(!count) count=1;
-            // count = count ?? 1 ---eger count undefined veya null ise count'i 1 yap
+            // count = count ?? 1 ---eger count undefined veya null ise count'i 1 yap (nullish operatoru)
             count ??= 1;
 
             if(count>1){
@@ -24,7 +24,7 @@
             
             localStorage.setItem("count", ++count);
 
-        }) (); // isimsiz fonksiyonu parantez icine aldim. sonunada bos parantez olusturdum. kendi kendini cagiran fonksiyon
+        }) (); // isimsiz fonksiyonu parantez icine aldim. sonunada bos parantez olusturdum. kendi kendini cagiran fonksiyon oldu
 
     </script>
 </body>

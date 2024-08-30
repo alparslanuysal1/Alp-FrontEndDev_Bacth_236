@@ -2,10 +2,10 @@
 const lblMinute = document.querySelector("#clock li:last-child");
 const lblSecond = document.querySelector("#clock li:nth-child(2)"); */
 
-const clockItems = document.querySelectorAll("#clock li");
+const clockItems = document.querySelectorAll("#clock li"); /* hepsını bır dızı olarak aldi */
 const clock = document.querySelector("#clock");
 
-let timer = null;
+let timer = null; // iki fonsiyonda kullanacagimiz icin global tanimladik
 let flag = true;
 
 const startClock = () => {
@@ -18,10 +18,10 @@ const startClock = () => {
         clockItems[2].innerHTML = minute.toString().padStart(2, "0");
         clockItems[1].classList.toggle("hidden"); // toggle varsa cikar yoksa ekle demektir
 
-        //ilk baslangictaki gecikmeden dolayi saatin icinin bos gorunmesini engelledik
+        //ilk baslangictaki gecikmeden dolayi saatin icinin bos gorunmesini engelledik. saati toptan gecikmeli gosteriyoruz
         if (flag) {
             clock.classList.remove("hidden");
-            flag = false;
+            flag = false; // cok defa calisan bir fonksiyon icinde sadece bir kere calismasi icin bunu yaptik
         }
 
     },1000) // saniyede bir kez calisacak
@@ -33,7 +33,7 @@ const stopClock = () => {
     clearInterval(timer)
 };
 
-window.addEventListener("beforeunload", () => { // beforeunload => kapatmadan once demektir
+window.addEventListener("beforeunload", () => { // beforeunload => kapatmadan once demektir. pencereyi kapatinca bu fonksiyon calisir ve icine yazdigimiz stopClock fonksiyonu cagirilir
     stopClock();
     timer = null; //hafizadaki timer icine attigimizobjeyi sifirlariz ki tekrar actigimizda  
 }); //addEventListener=> olaylari izle demektir

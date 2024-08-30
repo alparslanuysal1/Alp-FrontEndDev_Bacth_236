@@ -12,12 +12,13 @@
 
         let arr = [12,4,23,67,8,99];
         console.log(arr) //dizi
-        console.log(...arr) // 12 4 23 67 8 99  uc nokta fonksiyonun icinde parametre olarak kullanilirsa spread olur ve elemanlari diiz olmaktan cikarip sirayla string olarak yazar
+        console.log(...arr) // 12 4 23 67 8 99  uc nokta fonksiyonun icinde parametre olarak kullanilirsa spread olur ve elemanlari dizI olmaktan cikarip sirayla string olarak yazar
 
         const sum = (s1, s2, s3, s4,) => {
             return s1 + s2 + s3 + s4;
         }
 
+        // REST SADECE FONKSIYONLARIN PARAMETRE ALDIGI YERE ... NOKTA KONULURSA CALISIR. DIGER YERLERE ... NOKTA KONULURSA SPREAD OLUR 
         console.log(sum(...arr)) // 106
 
 

@@ -13,26 +13,26 @@
         const btnStart = document.getElementById("btnStart")
         const btnStop = document.getElementById("btnStop")
         const lstPrices = document.getElementById("lstPrices")
-        let timer = null; // iki farkli fonksiyonda kullanacagimiz icin global verdik
+        let timer = null; // iki farkli fonksiyonda kullanacagimiz icin global verdik.  timer bir degisken adi
 
         const getRandomPrice = () => {
             const price = Math.floor(Math.random() * 4000 + 1000);
             return price;
         }
         const setPrices = () => {
-            if(timer) return; // timer degiskeni bir degere sahipse return ile basa don. yeniden fonksiyonu calistirma
+            if(timer) return; // timer degiskeni bir degere sahipse return ile basa don. yeniden fonksiyonu calistirma. pes pese timerlar olusmasin
             timer = setInterval(() => { //fonksiyon sonucunu timer degiskenine atadik
-                const li = document.createElement("li");
-                li.innerText = getRandomPrice();
-                lstPrices.appendChild(li);
+                const li = document.createElement("li"); // li diye element olustur
+                li.innerText = getRandomPrice(); // bu elementin innerText'ine getRandomPrice fonksiyonunun returnunu koyduk
+                lstPrices.appendChild(li); // li'nin son halini lstPrices'a cocuk olarak atadik
             }, 2000)
         }
         btnStart.addEventListener("click", () => {
             setPrices();
         })
         btnStop.addEventListener("click", () => {
-            clearInterval(timer); // bu sekilde setInterval'i durduruyoruz.
-            timer = null; //hafizadaki timer icine attigimizobjeyi sifirlariz
+            clearInterval(timer); // bu sekilde setInterval'i durduruyoruz. hangi interval'i durduracagimiza ona daha once verdigimiz degisken ismini buraya yazdigimiz icin anliyor.   
+            timer = null; // timer i durdurduktan sonra hafizadaki timer'in icini bosaltiriz ki bir daha starta bastigimizda timer calisabilsin
         })
 
         /* setInterval veya setTimeout kullanacaksak bunlari mutlaka bir degiskene atamaliyiz */

@@ -10,7 +10,8 @@
 
     <script>
 
-       const getAverage = (firstName, LastName, ...scores) => { // rest en sonra olur ve bir fonksiyonda bir tane rest olur
+        // REST SADECE FONKSIYONLARIN PARAMETRE ALDIGI YERE ... NOKTA KONULURSA CALISIR. DIGER YERLERE ... NOKTA KONULURSA SPREAD OLUR 
+       const getAverage = (firstName, LastName, ...scores) => { // rest (...) en sonra olur ve bir fonksiyonda bir tane rest olur
             const totalScores = scores.reduce((t, x) => t+x, 0);
             const average = (totalScores / scores.length).toFixed(2);
             return `${firstName} ${LastName}'s average is ${average}`;
