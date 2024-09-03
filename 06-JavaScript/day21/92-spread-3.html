@@ -15,19 +15,21 @@
             salary: 3000
         }
 
+        // Referance type 
         const person1 = person;
         person1.firstName = "John";
 
         console.log(person, person1);
 
-        const person2 = {...person} //  shallow copy. spread kullanarak person2 diye yeni bir obje tanimladik
+        //  shallow copy
+        const person2 = {...person} // spread kullanarak person2 diye yeni bir obje tanimladik
         person2.firstName = "Susan";
 
         console.log(person, person1, person2);
 
-        // ------------------------
+        // -------------------------
 
-        const person3 = { ...person, firstName: "Carlos", age: 45}; //firstName i degistirdik ve age ekledik
+        const person3 = { ...person, firstName: "Carlos", age: 45}; //firstName i degistirdik ve age ekledik. JS en sondaki firstName'i alir.
         delete person3.salary; // objeden silme islemi boyle yapilir.
         console.log(person3);
     </script>

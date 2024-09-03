@@ -20,17 +20,17 @@ const numberSortDESC = (arr) => {
 };
 
 const stringSortASC = (arr) => {
-	return arr.sort((a, b) => a.localeCompare(b));
+	return arr.sort((a, b) => a.localeCompare(b)); // stringlerde turkce karakterleri de kontrol edebilen bir fonksiyon var. tarayicinin destekledigi tum dillerdeki karakterleri dogru siralar. --Bu kucukten buyuge
 };
 
 const stringSortDESC = (arr) => {
-	return arr.sort((a, b) => b.localeCompare(a));
+	return arr.sort((a, b) => b.localeCompare(a)); //-- Bu da buyukten kucuge
 };
 
 const randomMix = (arr) => {
 	console.log(Math.random() - 0.5);
 
-	return arr.sort(() => Math.random() - 0.5);
+	return arr.sort(() => Math.random() - 0.5); // -0.5 sayesinde bazen pozitif bazen negatif gelir. bazen kucukten buyuge bazen buyukten kucuge siralar
 };
 export {
 	numberSortASC,
