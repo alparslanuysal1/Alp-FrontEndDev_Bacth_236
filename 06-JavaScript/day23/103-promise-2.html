@@ -15,7 +15,7 @@
                  cb(res)
              },0)
          } */
-        const confirmAsync = (msg) => new Promise((resolve) => {
+        const confirmAsync = (msg) => new Promise((resolve) => { // reject olmamasinin sebebi; burada bir hata beklemiyoruz
             setTimeout(() => {
                 const res = confirm(msg);
                 resolve(res)

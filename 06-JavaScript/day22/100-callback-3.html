@@ -31,12 +31,12 @@
 
                 cb(distance)
 
-            }, 3000)
+            }, 2000)
         }
 
 
         btnDistance.addEventListener("click", ()=>{
-            getDistanceFromGoogle(10000, 20000, (d)=>{ // cb burada ucuncu parametre olarak cagirildi. d'nin karsiligi sadece alt satirda.
+            getDistanceFromGoogle(10000, 20000, (d)=>{ // cb burada ucuncu parametre olarak verildi. 3. parametre bir fonksiyon! d'nin karsiligi sadece alt satirda. buradaki d yukaridaki distance'a esitlenecek!
                 lblDistance.textContent = `${d} km`
             });
 

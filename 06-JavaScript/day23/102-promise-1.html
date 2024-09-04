@@ -12,19 +12,19 @@
         const getUser = () => new Promise((resolve, reject) => {
             /* Bu bolumde asenkron calisan cesitli kodlar oldugunu farzedelim. Ornegin harici bir servise baglanti kodlari olabilir. Buradan bir data geri geliyor olabilir*/
             setTimeout(() => {
-                const ok = false;
+                const ok = true;
                 const data = { firstName: "John", lastName: "Doe" }
                 if (ok) {
-                    resolve(data)
+                    resolve(data) // buradaki data .than'e gidecek
                 }
                 else {
-                    reject("Invalid paramaters")
+                    reject("Invalid paramaters") // asagida .catch'de err'ye bu gonderiliyor
                 }
             }, 3000)
         })
         document.getElementById("btnGetUser").addEventListener("click", () => {
             const lblTitle = document.getElementById("lblTitle");
-            getUser().then((data) => {
+            getUser().then((data) => { /* data gelmesi icin bunu yazip icinde de callback yazmak lazim */
                 lblTitle.textContent = `${data.firstName} ${data.lastName}`
             }).catch((err) => alert(err));
         })

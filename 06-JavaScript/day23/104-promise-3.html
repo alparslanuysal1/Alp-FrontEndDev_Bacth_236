@@ -32,9 +32,10 @@
             const txtCoord2 = document.getElementById("txtCoord2");
             const coord1 = Number(txtCoord1.value)
             const coord2 = Number(txtCoord2.value)
+            
             getDistanceFromGoogle(coord1, coord2).then((distance) => {
                 console.log(distance);
-                return getPriceFromUber(distance)
+                return getPriceFromUber(distance) // promice yapisi icinde return yaparsan onu bir sonraki then'de alabilirsin
             }).then((price) => {
                 console.log(price)
                 lblResult.textContent = `$${price}`

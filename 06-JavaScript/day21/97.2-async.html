@@ -12,17 +12,19 @@
        
        const getData = () => {
         setTimeout( () => {
-            console.log("Hello 2")
+            return "Hello 2"
         }, 300);
 
         console.log("Hello 4")
+        /* return "Hello X" */
        }
 
             console.log("Hello 1")
-            getData();
+            const res = getData();
+            console.log(res); //burasi sonuc(return) gelmeden once calisti ve bitti. bu sebeple undefined yazdirir
             console.log("Hello 3")
        
-            // siralama 1-4-3-2
+            // siralama 1-4-undefined-3
     </script>
     
 </body>

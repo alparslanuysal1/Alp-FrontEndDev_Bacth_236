@@ -14,17 +14,13 @@
     
 
     <script>
-
-        
        
-
-       
-       const getData = (cb) => { //callback=cb
+       const getData = (cb) => { //callback=cb bu asagida getData'nin icinde tanimladigimiz fonksiyonu ifade ediyor. getData'ya(BURAYA!) asagida tanimladigimiz fonksiyonu parametre olarak veriyoruz!
         setTimeout( () => {
             // ...... API dan data cekiliyor mesela
            const data = "John Doe";
           
-            cb(data); // gecikmeli fonksiyon oldugu icin returnla geri cagiramiyoruz, callback = cb fonksiyonu tanimliyoruz ve baska yerde fonksiyon bu fonksiyonu cagiriyoruz. fonksiyon icinde fonksiyon cagiriyoruz.
+            cb(data); // gecikmeli fonksiyon oldugu icin returnla geri cagiramiyoruz. Yukarida parametre olarak verdigimiz fonksiyonu burada cagiriyoruz. fonksiyon icinde fonksiyon cagiriyoruz. EN SONDA!
         }, 2000);
 
         console.log("Hello 4");
@@ -33,14 +29,13 @@
 
             console.log("Hello 1");
 
-            getData( (data)=>{
-                document.getElementById("lstData").textContent = data;
+            getData( (d)=>{ /* getData'ya parametre olarak gonderdigimiz fonksiyon bu. Yani yukaridaki cb bu oluyor */
+                document.getElementById("lstData").textContent = d;
             });
 
             getData( (data)=>{
                 document.getElementById("txtName").value = data;
             });
-
 
             console.log("Hello 3")
        
