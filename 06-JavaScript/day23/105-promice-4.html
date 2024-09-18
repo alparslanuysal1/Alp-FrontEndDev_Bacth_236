@@ -11,33 +11,39 @@
     <button id="btnPrice">Get Price</button>
     <h2 id="lblResult">...</h2>
     <script>
+
+        /*  INTERVIEW SORUSU!!! PROMICE ZINCIRI OLUSTURURKEN DAHA CLEAN KOD YAPISI OLUSTURMAK VE PROMICE YAPILARINI SENKRON CALISTIRABILMEK ICIN BEKLETME AMACIYLA AWAIT KULLANILIR. AWAIT KULLANILAN BIR FONKSIYONUN DA ASYNC OLARAK ISARETLENMESI GEREKIR  */
+
+
         const getDistanceFromGoogle = (coord1, coord2) => new Promise((resolve) => {
             setTimeout(() => {
-                // Burada Gogle sunucularina baglandigimizi varsayalim
-                // Google aldigi 2 koordinat arasindaki mesafeyi hesaplaayip bize geri veriyor
+
                 const distance = Math.floor(Math.random() * (coord1 - coord2) + coord2);
                 resolve(distance);
             }, 3000)
         })
         const getPriceFromUber = (distance) => new Promise((resolve) => {
             setTimeout(() => {
-                // Burada Uber sunucularina baglandigimizi ve gonderdigimiz mesafe bilgisine karsilik ucret bilgisini dondurdugunu varsayalim
+
                 const price = distance * Math.floor(Math.random() * 100)
                 resolve(price);
             }, 2000)
         })
-        const loadData = async (coord1, coord2) => {
-            const distance = await getDistanceFromGoogle(coord1, coord2)
-            const price = await getPriceFromUber(distance)
+
+        //BIR FONKSIYONUN ICINDE AWAIT KULLANMAK ISTIYORSAK O FONKSIYONU ASYNC DIYE ISARETLEMEMIZ LAZIM
+        const loadData = async (coord1, coord2) => { // kendisini async(asenkron) bir fonksiyon yaptik fakat icindekiler senkron calisacak. Buraya async yazmaliyiz ki asagidaki await calissin. en yakin fonksiyon bu. buraya yazcaz
+            const distance = await getDistanceFromGoogle(coord1, coord2) // bu fonksiyon bir promice oldugu icin basina await koyunca onun sonucu gelesiye kadar bekler ve distance'a atar. Yani undefined olmaz
+            const price = await getPriceFromUber(distance) // ayni sekilde 
             return price;
         }
-        document.getElementById("btnPrice").addEventListener("click", async () => { // buraya async yazmaliyiz ki asagidaki await calissin. en yakin fonksiyon bu. buraya yazcaz
+        document.getElementById("btnPrice").addEventListener("click", async () => { // buraya async yazmaliyiz ki asagidaki await calissin. en yakin fonksiyon bu. buraya yazcaz. 
             const lblResult = document.getElementById("lblResult");
             const txtCoord1 = document.getElementById("txtCoord1");
             const txtCoord2 = document.getElementById("txtCoord2");
             const coord1 = Number(txtCoord1.value)
             const coord2 = Number(txtCoord2.value)
-            const price = await loadData(coord1, coord2)
+
+            const price = await loadData(coord1, coord2) // fonksiyonu await'le bekletelim ki asagidaki textContent'e price'i yazsin
             lblResult.textContent = price;
             console.log("Hello")
         })

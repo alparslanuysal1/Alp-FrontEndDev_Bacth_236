@@ -26,9 +26,9 @@ const deleteUser = async (id) => {
 const createUser = async (user) => {
 	const res = await fetch(`${API_URL}/users`, {
 		method: "post",
-		body: JSON.stringify(user),
+		body: JSON.stringify(user), //! user bir JS objesi oldugu icin backend'e gonderirken json string hale fonfurmemiz lazim!!
 		headers: {
-			"Content-Type": "application/json",
+			"Content-Type": "application/json", // gonderdigimiz objenin hangi formatta gondrildigini belirtmemiz lazim
 		},
 	});
 	if (!res.ok) throw new Error("Something went wrong");

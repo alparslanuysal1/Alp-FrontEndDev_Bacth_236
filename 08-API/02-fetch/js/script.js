@@ -19,20 +19,22 @@ const addUser = async () => {
 	const lastName = txtLastName.value;
 	const email = txtEmail.value;
 
-	const user = {
+	const user = { /* javaScriptte key ve value ayni ise asagidaki gibi obje tanimlayabiliriz */
 		firstName,
 		lastName,
 		email,
 	};
+
+	/* Yukaridaki girdilerle yeni bir kullanici yazdim ve asagidaki createUser(user) ile de back end'e gonderdim */
 
 	await createUser(user);
 	init();
 	frmUser.reset();
 };
 
-const editUser = async (id) => {
+const editUser = async (id) => { // edit butonuna bastigimizda back end'e baglanarak oradan gelen ilgili kaydin bilgilerini formdaki girdi cubuklarina dolduran fonksiyon
 	const user = await getUserById(id);
-	const { firstName, lastName, email, avatar } = user;
+	const { firstName, lastName, email } = user; // user'in icerisinden destructring yaptik
 	txtFirstName.value = firstName;
 	txtLastName.value = lastName;
 	txtEmail.value = email;
@@ -48,10 +50,14 @@ const saveUser = async (id) =>{
 		lastName,
 		email,
 	};
+	
+	/* Yukaridaki girdilerle kullaniciyi duzenledim ve asagidaki updateUser(user) ile de back end'e gonderdim */
 
 	await updateUser(id, user);
 	init();
 	frmUser.reset();
+	
+	//Update butonuna bastigimiz zaman update islemi bitecek ve asagidaki kodlarla submit butonunun davranisini tekrar kullanici ekleme methoduna ve seklini de +Add'e geri getirecegiz
     frmUser.dataset.method = "create";
     btnSubmit.innerHTML = "➕ Add"
 }
@@ -78,7 +84,7 @@ const renderUserList = (users) => {
 	return strUsers;
 };
 
-const init = async () => {
+const init = async () => { //! Bu fonksiyon back end'den guncel kullanici listesini cekerek html'ye users'i yerle;tiriyor. Kullanici listesinde yaptihgimiz her islemden sonra bu fonksiyonu cagirarak sayfada gordugumuz listeyi guncellememiz lazim!!
 	const users = await getAllUsers();
 	const strUsers = renderUserList(users);
 	tbodyUsers.innerHTML = strUsers;
@@ -87,7 +93,7 @@ const init = async () => {
 init();
 
 tbodyUsers.addEventListener("click", async (e) => {
-	const userId = e.target.dataset.id;
+	const userId = e.target.dataset.id; // bastigimiz satirdaki datasetin icindeki id'yi al ve onu userId isimli degiskene ata
 	if (!userId) return;
 
 	if (e.target.classList.contains("btn-del")) { // olayin oldugu yerin classlistinde btn-del varsa
@@ -97,20 +103,21 @@ tbodyUsers.addEventListener("click", async (e) => {
 		init();
 	}
 	else if (e.target.classList.contains("btn-edit")) {
-		editUser(userId);
+		editUser(userId); // gorevi: editlenecek kullanici bilgileriyle formu doldurmak
 		window.scrollTo(0, 0);
 		btnSubmit.innerHTML = "💾 Update";
-		frmUser.dataset.method = "update";
-		frmUser.dataset.id = userId;
+		frmUser.dataset.method = "update"; // formun dataset'indeki methodu'u update yap.
+		frmUser.dataset.id = userId; // formun dataset'indeki id'yi userId yap.
+		/* Boylece html'deki formun data-method="create" data-id="" attribute'lerini degistirebilecegiz */
 	}
 });
 
 frmUser.addEventListener("submit", (e) => {
-	e.preventDefault(); // submit butonunun default davranisini onle diyoruz
-	const method = e.target.dataset.method;
+	e.preventDefault(); // submit butonunun default davranisini once diyoruz
+	const method = e.target.dataset.method; // e.target formu verir, cunku olay formda oluyor. dataset.method ise orada create mi var update mi var bunu verir. Yani o anda hangi methodu uyguluyorsa o gelir.
 	const userId = e.target.dataset.id;
 
-	if (method === "create") {
+	if (method === "create") { // method eger create ise addUser()'i calistir. degilse saveUser()'i calistir
 		addUser();
 	} else {
         saveUser(userId)
