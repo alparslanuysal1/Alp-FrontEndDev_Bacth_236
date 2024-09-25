@@ -55,7 +55,7 @@ const saveUser = async (id) =>{
 
 	await updateUser(id, user);
 	init();
-	frmUser.reset();
+	frmUser.reset(); // formu bosaltiyor.
 	
 	//Update butonuna bastigimiz zaman update islemi bitecek ve asagidaki kodlarla submit butonunun davranisini tekrar kullanici ekleme methoduna ve seklini de +Add'e geri getirecegiz
     frmUser.dataset.method = "create";
@@ -84,7 +84,7 @@ const renderUserList = (users) => {
 	return strUsers;
 };
 
-const init = async () => { //! Bu fonksiyon back end'den guncel kullanici listesini cekerek html'ye users'i yerle;tiriyor. Kullanici listesinde yaptihgimiz her islemden sonra bu fonksiyonu cagirarak sayfada gordugumuz listeyi guncellememiz lazim!!
+const init = async () => { //!  Bu fonksiyon back end'den guncel kullanici listesini cekerek html'ye users'i yerle;tiriyor. Kullanici listesinde yaptihgimiz her islemden sonra bu fonksiyonu cagirarak sayfada gordugumuz listeyi guncellememiz lazim!!
 	const users = await getAllUsers();
 	const strUsers = renderUserList(users);
 	tbodyUsers.innerHTML = strUsers;
